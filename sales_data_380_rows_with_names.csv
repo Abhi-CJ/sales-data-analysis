@@ -1,0 +1,381 @@
+Order_ID,Customer_ID,Customer_Name,Order_Date,Product,Category,Region,City,Payment_Mode,Order_Status,Quantity,Price,Discount (%),Shipping_Cost,Total_Sales,Discount_Amount,Profit
+1,1051,Rahul Verma,01-01-2024,Headphones,Accessories,North,Delhi,Credit Card,Delivered,2,1868,13,111,3736,485.68,3139.32
+2,1092,Karan Gupta,02-01-2024,Laptop,Electronics,West,Chennai,Debit Card,Shipped,9,347,19,47,3123,593.37,2482.63
+3,1014,Rahul Malhotra,03-01-2024,Headphones,Electronics,East,Hyderabad,UPI,Delivered,7,2524,21,23,17668,3710.28,13934.72
+4,1071,Manish Iyer,04-01-2024,Mouse,Accessories,South,Hyderabad,Cash on Delivery,Delivered,3,431,14,169,1293,181.02,942.98
+5,1060,Divya Reddy,05-01-2024,Monitor,Electronics,North,Chennai,Debit Card,Cancelled,1,2150,23,95,2150,494.5,1560.5
+6,1020,Pooja Yadav,06-01-2024,Monitor,Electronics,North,Kolkata,Credit Card,Shipped,8,565,7,192,4520,316.4,4011.6
+7,1082,Sneha Iyer,07-01-2024,Mouse,Accessories,South,Delhi,Credit Card,Shipped,6,1874,20,86,11244,2248.8,8909.2
+8,1086,Sneha Singh,08-01-2024,Laptop,Electronics,West,Delhi,Debit Card,Pending,7,635,14,105,4445,622.3,3717.7
+9,1074,Karan Singh,09-01-2024,Tablet,Accessories,South,Kolkata,UPI,Shipped,9,598,21,181,5382,1130.22,4070.78
+10,1074,Vikram Kumar,10-01-2024,Phone,Electronics,West,Hyderabad,UPI,Shipped,5,1434,19,110,7170,1362.3,5697.7
+11,1087,Sneha Verma,11-01-2024,Laptop,Accessories,South,Bangalore,Credit Card,Pending,1,1614,27,124,1614,435.78,1054.22
+12,1099,Aditya Joshi,12-01-2024,Phone,Accessories,East,Bangalore,Credit Card,Shipped,7,2746,13,20,19222,2498.86,16703.14
+13,1023,Kavya Iyer,13-01-2024,Mouse,Accessories,West,Bangalore,UPI,Shipped,5,2787,26,91,13935,3623.1,10220.9
+14,1002,Nikhil Verma,14-01-2024,Keyboard,Electronics,East,Hyderabad,Cash on Delivery,Shipped,3,762,28,106,2286,640.08,1539.92
+15,1021,Meera Patel,15-01-2024,Phone,Accessories,North,Hyderabad,Debit Card,Shipped,9,2689,8,185,24201,1936.08,22079.92
+16,1052,Rahul Kumar,16-01-2024,Tablet,Electronics,South,Kolkata,Credit Card,Pending,1,1484,7,25,1484,103.88,1355.12
+17,1001,Anjali Gupta,17-01-2024,Keyboard,Electronics,North,Delhi,Credit Card,Shipped,1,972,25,172,972,243,557
+18,1087,Pooja Verma,18-01-2024,Phone,Electronics,North,Kolkata,UPI,Shipped,1,2597,27,164,2597,701.19,1731.81
+19,1029,Anjali Iyer,19-01-2024,Mouse,Electronics,North,Kolkata,Debit Card,Pending,3,2237,25,80,6711,1677.75,4953.25
+20,1037,Arjun Iyer,20-01-2024,Keyboard,Accessories,North,Hyderabad,UPI,Cancelled,6,2767,16,31,16602,2656.32,13914.68
+21,1001,Amit Joshi,21-01-2024,Mouse,Accessories,South,Bangalore,Debit Card,Delivered,3,1543,1,25,4629,46.29,4557.71
+22,1063,Suresh Yadav,22-01-2024,Phone,Electronics,North,Mumbai,Debit Card,Cancelled,8,2385,24,46,19080,4579.2,14454.8
+23,1059,Rohan Nair,23-01-2024,Mouse,Electronics,South,Delhi,Debit Card,Pending,2,1773,23,155,3546,815.58,2575.42
+24,1020,Arjun Sharma,24-01-2024,Tablet,Accessories,South,Hyderabad,Credit Card,Delivered,9,1191,29,143,10719,3108.51,7467.49
+25,1032,Rahul Yadav,25-01-2024,Phone,Electronics,East,Bangalore,Cash on Delivery,Pending,3,2615,2,125,7845,156.9,7563.1
+26,1075,Karan Gupta,26-01-2024,Phone,Accessories,West,Mumbai,UPI,Pending,5,1446,7,112,7230,506.1,6611.9
+27,1057,Divya Singh,27-01-2024,Phone,Electronics,West,Mumbai,Cash on Delivery,Shipped,8,559,11,128,4472,491.92,3852.08
+28,1021,Manish Nair,28-01-2024,Laptop,Electronics,South,Hyderabad,UPI,Delivered,2,1120,0,118,2240,0,2122
+29,1088,Priya Patel,29-01-2024,Laptop,Accessories,East,Chennai,Debit Card,Shipped,6,2576,9,187,15456,1391.04,13877.96
+30,1048,Vikram Malhotra,30-01-2024,Laptop,Electronics,South,Delhi,Credit Card,Delivered,5,2710,19,161,13550,2574.5,10814.5
+31,1090,Priya Nair,31-01-2024,Tablet,Accessories,South,Mumbai,Cash on Delivery,Pending,9,1162,2,54,10458,209.16,10194.84
+32,1058,Vikram Nair,01-02-2024,Keyboard,Electronics,South,Hyderabad,Credit Card,Pending,5,2027,5,195,10135,506.75,9433.25
+33,1041,Rohan Joshi,02-02-2024,Mouse,Electronics,East,Hyderabad,UPI,Cancelled,2,1813,6,103,3626,217.56,3305.44
+34,1091,Suresh Malhotra,03-02-2024,Monitor,Electronics,West,Bangalore,Credit Card,Delivered,5,1840,19,75,9200,1748,7377
+35,1059,Arjun Kumar,04-02-2024,Phone,Accessories,East,Chennai,Credit Card,Shipped,4,2416,22,196,9664,2126.08,7341.92
+36,1079,Neha Joshi,05-02-2024,Mouse,Electronics,North,Delhi,Cash on Delivery,Cancelled,7,416,24,160,2912,698.88,2053.12
+37,1014,Rohan Verma,06-02-2024,Phone,Electronics,East,Kolkata,Debit Card,Cancelled,6,577,26,68,3462,900.12,2493.88
+38,1061,Kavya Iyer,07-02-2024,Tablet,Electronics,East,Bangalore,Credit Card,Cancelled,2,318,17,65,636,108.12,462.88
+39,1061,Arjun Nair,08-02-2024,Phone,Electronics,East,Mumbai,Debit Card,Shipped,5,389,10,132,1945,194.5,1618.5
+40,1046,Divya Patel,09-02-2024,Laptop,Accessories,East,Mumbai,UPI,Cancelled,7,569,18,155,3983,716.94,3111.06
+41,1061,Swati Joshi,10-02-2024,Monitor,Accessories,West,Bangalore,Credit Card,Shipped,7,2001,4,62,14007,560.28,13384.72
+42,1050,Anjali Patel,11-02-2024,Headphones,Electronics,North,Hyderabad,Cash on Delivery,Cancelled,5,2396,18,167,11980,2156.4,9656.6
+43,1054,Nikhil Patel,12-02-2024,Phone,Accessories,West,Mumbai,UPI,Shipped,9,851,10,143,7659,765.9,6750.1
+44,1063,Vikram Patel,13-02-2024,Mouse,Electronics,West,Chennai,UPI,Pending,4,2082,23,116,8328,1915.44,6296.56
+45,1002,Suresh Yadav,14-02-2024,Laptop,Electronics,East,Delhi,Cash on Delivery,Pending,3,1711,11,109,5133,564.63,4459.37
+46,1050,Nikhil Joshi,15-02-2024,Headphones,Electronics,South,Chennai,Credit Card,Pending,4,969,9,58,3876,348.84,3469.16
+47,1006,Pooja Yadav,16-02-2024,Monitor,Accessories,South,Mumbai,Credit Card,Pending,5,2621,7,104,13105,917.35,12083.65
+48,1020,Pooja Iyer,17-02-2024,Headphones,Accessories,West,Kolkata,UPI,Pending,6,980,23,196,5880,1352.4,4331.6
+49,1072,Neha Joshi,18-02-2024,Laptop,Accessories,West,Delhi,Credit Card,Cancelled,3,1916,27,81,5748,1551.96,4115.04
+50,1038,Isha Patel,19-02-2024,Keyboard,Accessories,East,Delhi,Debit Card,Cancelled,2,2407,27,125,4814,1299.78,3389.22
+51,1017,Rohan Malhotra,20-02-2024,Keyboard,Accessories,West,Bangalore,Cash on Delivery,Cancelled,4,2598,8,126,10392,831.36,9434.64
+52,1003,Kavya Iyer,21-02-2024,Headphones,Accessories,East,Bangalore,Debit Card,Shipped,5,1511,3,73,7555,226.65,7255.35
+53,1088,Rahul Malhotra,22-02-2024,Tablet,Accessories,South,Kolkata,Credit Card,Shipped,4,1449,4,145,5796,231.84,5419.16
+54,1059,Karan Iyer,23-02-2024,Mouse,Accessories,South,Hyderabad,UPI,Shipped,3,722,20,28,2166,433.2,1704.8
+55,1013,Nikhil Joshi,24-02-2024,Mouse,Accessories,North,Delhi,Cash on Delivery,Shipped,8,721,7,107,5768,403.76,5257.24
+56,1008,Sneha Malhotra,25-02-2024,Headphones,Electronics,South,Kolkata,Credit Card,Pending,4,982,22,56,3928,864.16,3007.84
+57,1089,Neha Yadav,26-02-2024,Phone,Accessories,West,Bangalore,Credit Card,Pending,2,2520,8,68,5040,403.2,4568.8
+58,1052,Nikhil Malhotra,27-02-2024,Phone,Accessories,South,Bangalore,UPI,Pending,2,1135,14,60,2270,317.8,1892.2
+59,1001,Vikram Verma,28-02-2024,Mouse,Accessories,East,Delhi,UPI,Delivered,1,2430,14,36,2430,340.2,2053.8
+60,1083,Rahul Reddy,29-02-2024,Mouse,Accessories,South,Chennai,Debit Card,Cancelled,4,1888,15,107,7552,1132.8,6312.2
+61,1091,Aditya Kumar,01-03-2024,Keyboard,Accessories,North,Mumbai,Cash on Delivery,Shipped,9,687,13,40,6183,803.79,5339.21
+62,1059,Kavya Kumar,02-03-2024,Tablet,Accessories,South,Bangalore,Cash on Delivery,Shipped,7,2050,7,70,14350,1004.5,13275.5
+63,1070,Suresh Reddy,03-03-2024,Laptop,Accessories,East,Hyderabad,UPI,Pending,7,1045,17,78,7315,1243.55,5993.45
+64,1043,Kavya Joshi,04-03-2024,Phone,Accessories,East,Hyderabad,Debit Card,Shipped,7,2371,9,186,16597,1493.73,14917.27
+65,1007,Vikram Nair,05-03-2024,Mouse,Accessories,West,Bangalore,Cash on Delivery,Shipped,8,2661,27,60,21288,5747.76,15480.24
+66,1046,Isha Kumar,06-03-2024,Keyboard,Accessories,South,Chennai,UPI,Cancelled,1,2203,19,58,2203,418.57,1726.43
+67,1034,Neha Nair,07-03-2024,Monitor,Accessories,East,Chennai,Credit Card,Pending,8,1948,5,160,15584,779.2,14644.8
+68,1077,Aditya Yadav,08-03-2024,Keyboard,Electronics,North,Kolkata,Cash on Delivery,Cancelled,4,885,11,30,3540,389.4,3120.6
+69,1080,Meera Iyer,09-03-2024,Phone,Electronics,West,Hyderabad,Debit Card,Delivered,4,2360,1,166,9440,94.4,9179.6
+70,1035,Nikhil Yadav,10-03-2024,Phone,Accessories,North,Kolkata,Debit Card,Delivered,4,2369,6,158,9476,568.56,8749.44
+71,1049,Kavya Malhotra,11-03-2024,Keyboard,Accessories,South,Hyderabad,Debit Card,Delivered,6,1767,15,96,10602,1590.3,8915.7
+72,1003,Pooja Gupta,12-03-2024,Laptop,Electronics,South,Mumbai,Credit Card,Pending,7,1445,2,146,10115,202.3,9766.7
+73,1001,Meera Verma,13-03-2024,Headphones,Accessories,South,Mumbai,Cash on Delivery,Shipped,6,238,12,65,1428,171.36,1191.64
+74,1005,Rohan Malhotra,14-03-2024,Phone,Electronics,West,Delhi,Cash on Delivery,Pending,1,2744,2,64,2744,54.88,2625.12
+75,1053,Priya Yadav,15-03-2024,Keyboard,Electronics,East,Kolkata,Credit Card,Pending,8,979,26,20,7832,2036.32,5775.68
+76,1003,Kavya Verma,16-03-2024,Mouse,Electronics,West,Bangalore,Cash on Delivery,Shipped,7,1456,17,187,10192,1732.64,8272.36
+77,1053,Suresh Yadav,17-03-2024,Keyboard,Electronics,North,Kolkata,Credit Card,Cancelled,6,2396,10,127,14376,1437.6,12811.4
+78,1092,Suresh Sharma,18-03-2024,Tablet,Electronics,West,Bangalore,Credit Card,Delivered,6,2908,7,38,17448,1221.36,16188.64
+79,1062,Sneha Malhotra,19-03-2024,Headphones,Accessories,North,Chennai,Credit Card,Cancelled,5,2127,5,95,10635,531.75,10008.25
+80,1017,Swati Reddy,20-03-2024,Monitor,Electronics,West,Kolkata,Debit Card,Delivered,6,501,0,91,3006,0,2915
+81,1089,Neha Sharma,21-03-2024,Laptop,Accessories,East,Chennai,Cash on Delivery,Pending,9,2485,27,128,22365,6038.55,16198.45
+82,1043,Neha Reddy,22-03-2024,Monitor,Accessories,North,Mumbai,Credit Card,Delivered,9,846,0,31,7614,0,7583
+83,1033,Nikhil Patel,23-03-2024,Headphones,Electronics,South,Mumbai,Cash on Delivery,Pending,8,862,22,180,6896,1517.12,5198.88
+84,1073,Priya Nair,24-03-2024,Headphones,Electronics,South,Delhi,Debit Card,Cancelled,9,2483,7,64,22347,1564.29,20718.71
+85,1061,Aditya Verma,25-03-2024,Headphones,Accessories,West,Kolkata,Credit Card,Pending,8,1959,4,109,15672,626.88,14936.12
+86,1099,Sneha Iyer,26-03-2024,Monitor,Electronics,South,Chennai,UPI,Cancelled,8,2450,27,122,19600,5292,14186
+87,1013,Isha Sharma,27-03-2024,Mouse,Electronics,North,Bangalore,Debit Card,Shipped,1,455,15,27,455,68.25,359.75
+88,1094,Aditya Gupta,28-03-2024,Headphones,Accessories,South,Mumbai,UPI,Shipped,5,797,10,172,3985,398.5,3414.5
+89,1047,Sneha Singh,29-03-2024,Keyboard,Accessories,East,Mumbai,Cash on Delivery,Shipped,4,861,4,110,3444,137.76,3196.24
+90,1014,Swati Iyer,30-03-2024,Monitor,Electronics,East,Bangalore,Cash on Delivery,Pending,2,434,3,193,868,26.04,648.96
+91,1071,Kavya Singh,31-03-2024,Headphones,Accessories,West,Chennai,Debit Card,Shipped,8,1568,29,106,12544,3637.76,8800.24
+92,1077,Kavya Gupta,01-04-2024,Keyboard,Electronics,North,Chennai,Cash on Delivery,Delivered,3,2781,5,177,8343,417.15,7748.85
+93,1086,Swati Patel,02-04-2024,Mouse,Electronics,East,Kolkata,UPI,Cancelled,4,969,13,194,3876,503.88,3178.12
+94,1061,Vikram Gupta,03-04-2024,Tablet,Electronics,East,Kolkata,Credit Card,Cancelled,7,2788,21,196,19516,4098.36,15221.64
+95,1039,Anjali Patel,04-04-2024,Mouse,Accessories,North,Hyderabad,Credit Card,Delivered,9,412,18,194,3708,667.44,2846.56
+96,1084,Swati Iyer,05-04-2024,Headphones,Accessories,South,Hyderabad,Credit Card,Pending,2,662,8,103,1324,105.92,1115.08
+97,1079,Pooja Yadav,06-04-2024,Monitor,Accessories,South,Delhi,Debit Card,Pending,3,2683,11,101,8049,885.39,7062.61
+98,1081,Rohan Yadav,07-04-2024,Phone,Accessories,West,Mumbai,Cash on Delivery,Cancelled,4,482,10,165,1928,192.8,1570.2
+99,1052,Swati Malhotra,08-04-2024,Headphones,Accessories,South,Kolkata,UPI,Shipped,1,1686,13,87,1686,219.18,1379.82
+100,1023,Sneha Reddy,09-04-2024,Phone,Electronics,North,Chennai,Cash on Delivery,Pending,7,1630,22,180,11410,2510.2,8719.8
+101,1025,Divya Verma,10-04-2024,Keyboard,Electronics,East,Bangalore,Cash on Delivery,Pending,2,287,15,146,574,86.1,341.9
+102,1088,Swati Joshi,11-04-2024,Tablet,Electronics,South,Chennai,Cash on Delivery,Delivered,5,1267,0,183,6335,0,6152
+103,1059,Isha Sharma,12-04-2024,Laptop,Electronics,West,Mumbai,Credit Card,Delivered,1,660,12,101,660,79.2,479.8
+104,1040,Swati Verma,13-04-2024,Mouse,Accessories,South,Hyderabad,UPI,Shipped,3,2525,22,166,7575,1666.5,5742.5
+105,1028,Swati Joshi,14-04-2024,Tablet,Electronics,North,Chennai,UPI,Pending,2,2668,20,175,5336,1067.2,4093.8
+106,1014,Aditya Yadav,15-04-2024,Headphones,Accessories,West,Delhi,Cash on Delivery,Pending,1,1924,20,187,1924,384.8,1352.2
+107,1044,Isha Sharma,16-04-2024,Phone,Electronics,South,Mumbai,Credit Card,Delivered,7,1576,29,103,11032,3199.28,7729.72
+108,1064,Isha Malhotra,17-04-2024,Mouse,Accessories,West,Hyderabad,Credit Card,Pending,5,2943,12,132,14715,1765.8,12817.2
+109,1088,Neha Singh,18-04-2024,Phone,Accessories,North,Bangalore,UPI,Cancelled,1,714,1,95,714,7.14,611.86
+110,1070,Sneha Nair,19-04-2024,Monitor,Electronics,East,Hyderabad,Credit Card,Delivered,6,902,3,141,5412,162.36,5108.64
+111,1008,Neha Gupta,20-04-2024,Phone,Electronics,North,Delhi,Credit Card,Shipped,5,1853,27,162,9265,2501.55,6601.45
+112,1087,Pooja Malhotra,21-04-2024,Monitor,Electronics,North,Mumbai,Credit Card,Delivered,3,2266,5,60,6798,339.9,6398.1
+113,1000,Swati Singh,22-04-2024,Keyboard,Electronics,North,Bangalore,Debit Card,Pending,7,222,25,186,1554,388.5,979.5
+114,1007,Sneha Malhotra,23-04-2024,Mouse,Accessories,North,Delhi,Cash on Delivery,Shipped,9,2660,26,21,23940,6224.4,17694.6
+115,1087,Amit Gupta,24-04-2024,Mouse,Electronics,East,Hyderabad,UPI,Delivered,9,1253,22,48,11277,2480.94,8748.06
+116,1062,Meera Reddy,25-04-2024,Laptop,Electronics,East,Delhi,UPI,Cancelled,9,2030,26,124,18270,4750.2,13395.8
+117,1010,Anjali Patel,26-04-2024,Headphones,Accessories,West,Mumbai,Debit Card,Cancelled,2,2355,4,70,4710,188.4,4451.6
+118,1080,Neha Iyer,27-04-2024,Monitor,Electronics,South,Kolkata,Cash on Delivery,Delivered,3,1504,24,94,4512,1082.88,3335.12
+119,1007,Manish Kumar,28-04-2024,Laptop,Electronics,East,Delhi,UPI,Cancelled,7,1334,2,29,9338,186.76,9122.24
+120,1034,Aditya Malhotra,29-04-2024,Phone,Electronics,East,Delhi,Credit Card,Cancelled,5,2383,0,161,11915,0,11754
+121,1034,Meera Patel,30-04-2024,Phone,Electronics,South,Hyderabad,UPI,Cancelled,2,561,3,70,1122,33.66,1018.34
+122,1032,Anjali Joshi,01-05-2024,Laptop,Electronics,East,Hyderabad,Credit Card,Shipped,3,2376,24,137,7128,1710.72,5280.28
+123,1004,Aditya Malhotra,02-05-2024,Mouse,Accessories,North,Bangalore,Debit Card,Cancelled,6,2099,19,140,12594,2392.86,10061.14
+124,1040,Karan Verma,03-05-2024,Phone,Electronics,North,Hyderabad,Credit Card,Cancelled,7,1484,1,58,10388,103.88,10226.12
+125,1027,Kavya Iyer,04-05-2024,Keyboard,Electronics,South,Chennai,UPI,Cancelled,9,714,25,47,6426,1606.5,4772.5
+126,1006,Amit Reddy,05-05-2024,Keyboard,Electronics,West,Mumbai,UPI,Shipped,1,648,29,22,648,187.92,438.08
+127,1072,Karan Patel,06-05-2024,Laptop,Electronics,West,Mumbai,UPI,Delivered,7,2123,29,103,14861,4309.69,10448.31
+128,1071,Vikram Nair,07-05-2024,Monitor,Electronics,South,Kolkata,Debit Card,Pending,8,1706,4,174,13648,545.92,12928.08
+129,1011,Divya Nair,08-05-2024,Monitor,Accessories,South,Kolkata,Debit Card,Cancelled,3,1447,2,136,4341,86.82,4118.18
+130,1033,Divya Patel,09-05-2024,Laptop,Electronics,North,Mumbai,Cash on Delivery,Delivered,4,2055,28,21,8220,2301.6,5897.4
+131,1032,Anjali Nair,10-05-2024,Monitor,Accessories,West,Kolkata,UPI,Cancelled,6,1073,27,112,6438,1738.26,4587.74
+132,1047,Aditya Kumar,11-05-2024,Mouse,Accessories,East,Bangalore,Credit Card,Shipped,7,2720,28,185,19040,5331.2,13523.8
+133,1022,Sneha Nair,12-05-2024,Mouse,Electronics,North,Hyderabad,Debit Card,Delivered,4,1628,8,150,6512,520.96,5841.04
+134,1061,Kavya Joshi,13-05-2024,Monitor,Electronics,South,Mumbai,UPI,Shipped,8,2549,19,163,20392,3874.48,16354.52
+135,1087,Rohan Verma,14-05-2024,Keyboard,Electronics,West,Kolkata,UPI,Cancelled,5,2478,5,113,12390,619.5,11657.5
+136,1036,Pooja Kumar,15-05-2024,Monitor,Electronics,East,Mumbai,Debit Card,Cancelled,1,1954,17,59,1954,332.18,1562.82
+137,1098,Aditya Sharma,16-05-2024,Mouse,Accessories,East,Chennai,Cash on Delivery,Shipped,4,1122,5,21,4488,224.4,4242.6
+138,1043,Neha Iyer,17-05-2024,Tablet,Electronics,North,Delhi,Debit Card,Pending,3,2359,18,100,7077,1273.86,5703.14
+139,1085,Rahul Sharma,18-05-2024,Headphones,Electronics,West,Hyderabad,Debit Card,Shipped,9,1236,27,188,11124,3003.48,7932.52
+140,1090,Kavya Sharma,19-05-2024,Phone,Electronics,West,Mumbai,Credit Card,Cancelled,8,1616,11,31,12928,1422.08,11474.92
+141,1034,Isha Singh,20-05-2024,Tablet,Electronics,South,Delhi,Credit Card,Shipped,1,2747,24,182,2747,659.28,1905.72
+142,1064,Pooja Reddy,21-05-2024,Monitor,Electronics,West,Kolkata,Cash on Delivery,Pending,6,2845,10,84,17070,1707,15279
+143,1098,Neha Joshi,22-05-2024,Keyboard,Electronics,West,Delhi,UPI,Shipped,9,2481,1,74,22329,223.29,22031.71
+144,1046,Priya Gupta,23-05-2024,Laptop,Accessories,North,Hyderabad,Debit Card,Pending,7,2849,14,64,19943,2792.02,17086.98
+145,1077,Rahul Joshi,24-05-2024,Monitor,Accessories,West,Mumbai,Cash on Delivery,Pending,4,513,11,120,2052,225.72,1706.28
+146,1002,Vikram Patel,25-05-2024,Keyboard,Electronics,East,Chennai,Credit Card,Shipped,1,2813,11,81,2813,309.43,2422.57
+147,1000,Rohan Verma,26-05-2024,Headphones,Electronics,North,Kolkata,Debit Card,Shipped,2,2456,8,68,4912,392.96,4451.04
+148,1004,Arjun Verma,27-05-2024,Monitor,Electronics,North,Mumbai,UPI,Delivered,5,2197,20,146,10985,2197,8642
+149,1089,Divya Joshi,28-05-2024,Mouse,Accessories,South,Hyderabad,Credit Card,Cancelled,5,1237,23,172,6185,1422.55,4590.45
+150,1013,Divya Patel,29-05-2024,Laptop,Electronics,West,Kolkata,Credit Card,Pending,8,1856,1,42,14848,148.48,14657.52
+151,1026,Suresh Iyer,30-05-2024,Keyboard,Accessories,South,Bangalore,Credit Card,Delivered,6,2834,21,171,17004,3570.84,13262.16
+152,1008,Pooja Joshi,31-05-2024,Keyboard,Electronics,East,Delhi,Cash on Delivery,Shipped,8,1978,2,57,15824,316.48,15450.52
+153,1078,Rohan Nair,01-06-2024,Keyboard,Electronics,North,Hyderabad,UPI,Cancelled,2,1214,11,47,2428,267.08,2113.92
+154,1014,Divya Sharma,02-06-2024,Headphones,Electronics,North,Bangalore,Debit Card,Delivered,3,1293,27,40,3879,1047.33,2791.67
+155,1089,Rahul Patel,03-06-2024,Monitor,Electronics,North,Mumbai,Cash on Delivery,Pending,6,1324,29,126,7944,2303.76,5514.24
+156,1041,Karan Joshi,04-06-2024,Headphones,Accessories,East,Chennai,Cash on Delivery,Delivered,3,897,25,165,2691,672.75,1853.25
+157,1076,Anjali Malhotra,05-06-2024,Phone,Accessories,East,Kolkata,Cash on Delivery,Pending,6,2379,15,183,14274,2141.1,11949.9
+158,1050,Amit Singh,06-06-2024,Phone,Electronics,South,Delhi,Credit Card,Shipped,6,1604,20,118,9624,1924.8,7581.2
+159,1062,Pooja Nair,07-06-2024,Monitor,Electronics,South,Kolkata,UPI,Cancelled,2,1355,27,192,2710,731.7,1786.3
+160,1095,Suresh Kumar,08-06-2024,Mouse,Accessories,South,Mumbai,Cash on Delivery,Cancelled,7,1243,23,138,8701,2001.23,6561.77
+161,1051,Rohan Kumar,09-06-2024,Headphones,Accessories,West,Kolkata,Debit Card,Cancelled,2,2129,25,92,4258,1064.5,3101.5
+162,1095,Priya Verma,10-06-2024,Laptop,Accessories,North,Delhi,UPI,Shipped,6,2783,29,141,16698,4842.42,11714.58
+163,1003,Arjun Verma,11-06-2024,Keyboard,Accessories,North,Mumbai,Debit Card,Pending,1,1213,0,49,1213,0,1164
+164,1093,Manish Sharma,12-06-2024,Keyboard,Electronics,South,Kolkata,UPI,Shipped,3,426,20,127,1278,255.6,895.4
+165,1022,Vikram Verma,13-06-2024,Monitor,Accessories,North,Chennai,Debit Card,Cancelled,2,2028,2,117,4056,81.12,3857.88
+166,1014,Karan Patel,14-06-2024,Mouse,Electronics,South,Hyderabad,Credit Card,Shipped,7,1692,19,51,11844,2250.36,9542.64
+167,1042,Arjun Yadav,15-06-2024,Phone,Accessories,West,Mumbai,Cash on Delivery,Shipped,4,1021,1,175,4084,40.84,3868.16
+168,1028,Isha Gupta,16-06-2024,Phone,Accessories,West,Hyderabad,Debit Card,Shipped,8,2223,8,191,17784,1422.72,16170.28
+169,1035,Divya Iyer,17-06-2024,Keyboard,Accessories,East,Mumbai,UPI,Pending,6,1070,18,98,6420,1155.6,5166.4
+170,1012,Meera Gupta,18-06-2024,Monitor,Accessories,West,Chennai,Cash on Delivery,Delivered,4,2652,14,60,10608,1485.12,9062.88
+171,1031,Neha Singh,19-06-2024,Headphones,Accessories,South,Hyderabad,Cash on Delivery,Delivered,5,2449,17,82,12245,2081.65,10081.35
+172,1070,Vikram Yadav,20-06-2024,Phone,Electronics,West,Bangalore,UPI,Shipped,9,2285,25,42,20565,5141.25,15381.75
+173,1058,Amit Patel,21-06-2024,Headphones,Electronics,East,Delhi,Debit Card,Delivered,7,1995,10,123,13965,1396.5,12445.5
+174,1085,Rahul Sharma,22-06-2024,Mouse,Accessories,North,Bangalore,Credit Card,Delivered,9,387,24,94,3483,835.92,2553.08
+175,1027,Neha Reddy,23-06-2024,Phone,Accessories,South,Kolkata,Credit Card,Shipped,7,1280,22,67,8960,1971.2,6921.8
+176,1065,Amit Gupta,24-06-2024,Phone,Electronics,North,Chennai,Debit Card,Shipped,1,1140,15,179,1140,171,790
+177,1041,Aditya Malhotra,25-06-2024,Tablet,Accessories,East,Bangalore,Cash on Delivery,Cancelled,8,2520,21,76,20160,4233.6,15850.4
+178,1044,Swati Patel,26-06-2024,Phone,Accessories,East,Mumbai,Cash on Delivery,Delivered,4,2830,16,137,11320,1811.2,9371.8
+179,1061,Kavya Sharma,27-06-2024,Laptop,Electronics,East,Kolkata,Cash on Delivery,Pending,3,2763,4,119,8289,331.56,7838.44
+180,1056,Neha Joshi,28-06-2024,Monitor,Accessories,North,Kolkata,Cash on Delivery,Shipped,7,725,11,143,5075,558.25,4373.75
+181,1005,Neha Malhotra,29-06-2024,Monitor,Accessories,North,Bangalore,Debit Card,Cancelled,3,535,10,180,1605,160.5,1264.5
+182,1027,Suresh Sharma,30-06-2024,Headphones,Electronics,North,Bangalore,Cash on Delivery,Pending,8,2945,29,171,23560,6832.4,16556.6
+183,1027,Swati Sharma,01-07-2024,Mouse,Electronics,North,Chennai,UPI,Delivered,6,1278,14,186,7668,1073.52,6408.48
+184,1043,Neha Kumar,02-07-2024,Phone,Electronics,East,Delhi,Cash on Delivery,Cancelled,5,2747,26,53,13735,3571.1,10110.9
+185,1083,Anjali Kumar,03-07-2024,Laptop,Accessories,East,Bangalore,Credit Card,Shipped,4,2783,2,175,11132,222.64,10734.36
+186,1029,Pooja Sharma,04-07-2024,Headphones,Electronics,South,Bangalore,Cash on Delivery,Pending,8,361,0,184,2888,0,2704
+187,1061,Manish Sharma,05-07-2024,Tablet,Electronics,South,Hyderabad,Debit Card,Shipped,8,793,19,26,6344,1205.36,5112.64
+188,1074,Rahul Patel,06-07-2024,Headphones,Electronics,North,Mumbai,Credit Card,Delivered,1,2138,28,184,2138,598.64,1355.36
+189,1091,Anjali Kumar,07-07-2024,Headphones,Electronics,West,Hyderabad,Debit Card,Pending,9,2406,15,75,21654,3248.1,18330.9
+190,1088,Arjun Gupta,08-07-2024,Phone,Electronics,West,Hyderabad,Debit Card,Delivered,5,259,1,84,1295,12.95,1198.05
+191,1061,Divya Nair,09-07-2024,Tablet,Electronics,East,Kolkata,Credit Card,Delivered,4,2101,1,66,8404,84.04,8253.96
+192,1096,Priya Joshi,10-07-2024,Headphones,Accessories,East,Delhi,Debit Card,Cancelled,6,2458,2,167,14748,294.96,14286.04
+193,1000,Aditya Kumar,11-07-2024,Laptop,Accessories,East,Mumbai,Debit Card,Shipped,6,605,7,38,3630,254.1,3337.9
+194,1026,Vikram Gupta,12-07-2024,Laptop,Electronics,South,Chennai,Cash on Delivery,Pending,2,863,23,176,1726,396.98,1153.02
+195,1061,Suresh Verma,13-07-2024,Monitor,Electronics,South,Chennai,UPI,Delivered,8,1332,27,165,10656,2877.12,7613.88
+196,1076,Manish Verma,14-07-2024,Tablet,Electronics,East,Bangalore,Debit Card,Delivered,7,1299,14,182,9093,1273.02,7637.98
+197,1002,Aditya Joshi,15-07-2024,Tablet,Accessories,East,Bangalore,Debit Card,Pending,1,741,6,190,741,44.46,506.54
+198,1069,Divya Joshi,16-07-2024,Monitor,Accessories,East,Chennai,Debit Card,Delivered,5,1537,5,145,7685,384.25,7155.75
+199,1071,Arjun Yadav,17-07-2024,Headphones,Accessories,West,Bangalore,Cash on Delivery,Cancelled,6,1197,8,158,7182,574.56,6449.44
+200,1026,Pooja Verma,18-07-2024,Tablet,Accessories,South,Delhi,UPI,Cancelled,4,1340,19,68,5360,1018.4,4273.6
+201,1008,Amit Iyer,19-07-2024,Laptop,Accessories,West,Hyderabad,Credit Card,Cancelled,2,1067,27,132,2134,576.18,1425.82
+202,1061,Nikhil Reddy,20-07-2024,Laptop,Accessories,West,Bangalore,Cash on Delivery,Cancelled,4,2266,0,57,9064,0,9007
+203,1036,Priya Malhotra,21-07-2024,Phone,Accessories,East,Kolkata,Cash on Delivery,Delivered,1,631,7,83,631,44.17,503.83
+204,1096,Isha Malhotra,22-07-2024,Tablet,Accessories,East,Bangalore,UPI,Pending,7,939,22,88,6573,1446.06,5038.94
+205,1050,Suresh Joshi,23-07-2024,Headphones,Accessories,North,Mumbai,UPI,Pending,2,1573,22,155,3146,692.12,2298.88
+206,1043,Nikhil Patel,24-07-2024,Monitor,Electronics,North,Delhi,Cash on Delivery,Pending,2,382,2,181,764,15.28,567.72
+207,1023,Anjali Reddy,25-07-2024,Monitor,Electronics,West,Mumbai,Credit Card,Pending,9,2360,3,195,21240,637.2,20407.8
+208,1078,Nikhil Malhotra,26-07-2024,Headphones,Electronics,South,Mumbai,Cash on Delivery,Shipped,5,1406,25,135,7030,1757.5,5137.5
+209,1058,Rahul Joshi,27-07-2024,Mouse,Electronics,East,Kolkata,UPI,Pending,2,2728,24,84,5456,1309.44,4062.56
+210,1031,Neha Sharma,28-07-2024,Keyboard,Accessories,East,Delhi,Credit Card,Shipped,9,1369,14,50,12321,1724.94,10546.06
+211,1095,Kavya Gupta,29-07-2024,Phone,Accessories,West,Delhi,UPI,Shipped,9,1030,5,151,9270,463.5,8655.5
+212,1087,Swati Iyer,30-07-2024,Monitor,Electronics,North,Delhi,Credit Card,Cancelled,1,1851,14,132,1851,259.14,1459.86
+213,1051,Kavya Reddy,31-07-2024,Tablet,Accessories,South,Delhi,Debit Card,Shipped,3,1336,20,128,4008,801.6,3078.4
+214,1061,Neha Sharma,01-08-2024,Phone,Electronics,North,Delhi,UPI,Delivered,4,675,2,197,2700,54,2449
+215,1057,Isha Malhotra,02-08-2024,Tablet,Accessories,North,Kolkata,UPI,Shipped,7,1526,24,88,10682,2563.68,8030.32
+216,1051,Meera Iyer,03-08-2024,Mouse,Electronics,North,Bangalore,Cash on Delivery,Cancelled,4,1170,20,177,4680,936,3567
+217,1011,Divya Kumar,04-08-2024,Laptop,Accessories,North,Mumbai,UPI,Shipped,2,1219,20,139,2438,487.6,1811.4
+218,1038,Isha Verma,05-08-2024,Phone,Accessories,East,Delhi,UPI,Delivered,7,1341,13,107,9387,1220.31,8059.69
+219,1001,Kavya Yadav,06-08-2024,Monitor,Electronics,East,Bangalore,Debit Card,Delivered,6,2036,19,86,12216,2321.04,9808.96
+220,1002,Sneha Gupta,07-08-2024,Phone,Accessories,North,Bangalore,UPI,Delivered,3,360,13,94,1080,140.4,845.6
+221,1055,Arjun Sharma,08-08-2024,Phone,Electronics,South,Mumbai,Debit Card,Cancelled,6,2648,3,64,15888,476.64,15347.36
+222,1080,Amit Reddy,09-08-2024,Phone,Electronics,West,Kolkata,Debit Card,Cancelled,6,397,11,23,2382,262.02,2096.98
+223,1058,Isha Nair,10-08-2024,Keyboard,Electronics,South,Chennai,Debit Card,Pending,5,1483,16,173,7415,1186.4,6055.6
+224,1001,Rahul Reddy,11-08-2024,Phone,Electronics,South,Chennai,Debit Card,Cancelled,4,859,6,174,3436,206.16,3055.84
+225,1001,Karan Iyer,12-08-2024,Tablet,Accessories,South,Bangalore,Credit Card,Delivered,1,1975,8,193,1975,158,1624
+226,1091,Arjun Verma,13-08-2024,Laptop,Accessories,North,Hyderabad,Cash on Delivery,Delivered,6,1270,2,126,7620,152.4,7341.6
+227,1053,Pooja Iyer,14-08-2024,Mouse,Accessories,East,Hyderabad,Credit Card,Cancelled,2,2210,27,70,4420,1193.4,3156.6
+228,1086,Kavya Verma,15-08-2024,Headphones,Electronics,South,Mumbai,UPI,Shipped,3,598,12,69,1794,215.28,1509.72
+229,1095,Rahul Singh,16-08-2024,Phone,Accessories,North,Chennai,Credit Card,Cancelled,8,1933,14,25,15464,2164.96,13274.04
+230,1096,Divya Joshi,17-08-2024,Monitor,Electronics,South,Bangalore,Credit Card,Cancelled,6,1782,17,78,10692,1817.64,8796.36
+231,1000,Aditya Nair,18-08-2024,Phone,Accessories,South,Kolkata,UPI,Delivered,3,2325,18,144,6975,1255.5,5575.5
+232,1018,Kavya Kumar,19-08-2024,Monitor,Accessories,North,Chennai,UPI,Pending,7,2371,0,162,16597,0,16435
+233,1001,Pooja Patel,20-08-2024,Tablet,Accessories,East,Bangalore,UPI,Delivered,4,274,5,49,1096,54.8,992.2
+234,1052,Manish Joshi,21-08-2024,Monitor,Electronics,East,Bangalore,Credit Card,Pending,9,2384,26,189,21456,5578.56,15688.44
+235,1043,Priya Reddy,22-08-2024,Headphones,Accessories,West,Delhi,Credit Card,Delivered,5,801,26,141,4005,1041.3,2822.7
+236,1089,Kavya Reddy,23-08-2024,Laptop,Accessories,North,Kolkata,UPI,Cancelled,3,1036,22,144,3108,683.76,2280.24
+237,1031,Vikram Yadav,24-08-2024,Monitor,Electronics,West,Delhi,Cash on Delivery,Delivered,2,1728,26,56,3456,898.56,2501.44
+238,1069,Isha Nair,25-08-2024,Monitor,Accessories,West,Mumbai,Cash on Delivery,Delivered,2,699,26,189,1398,363.48,845.52
+239,1031,Pooja Yadav,26-08-2024,Laptop,Electronics,West,Delhi,Debit Card,Delivered,3,1796,1,143,5388,53.88,5191.12
+240,1067,Amit Yadav,27-08-2024,Headphones,Accessories,East,Delhi,UPI,Cancelled,2,337,23,120,674,155.02,398.98
+241,1054,Rohan Kumar,28-08-2024,Phone,Electronics,North,Chennai,Debit Card,Cancelled,4,2297,13,54,9188,1194.44,7939.56
+242,1074,Vikram Singh,29-08-2024,Monitor,Electronics,West,Hyderabad,Cash on Delivery,Cancelled,2,1994,5,106,3988,199.4,3682.6
+243,1055,Arjun Sharma,30-08-2024,Laptop,Accessories,North,Bangalore,Debit Card,Cancelled,9,1172,13,153,10548,1371.24,9023.76
+244,1016,Priya Sharma,31-08-2024,Tablet,Electronics,North,Kolkata,UPI,Pending,2,1842,3,37,3684,110.52,3536.48
+245,1037,Nikhil Nair,01-09-2024,Laptop,Electronics,East,Delhi,UPI,Pending,9,2085,20,132,18765,3753,14880
+246,1023,Manish Iyer,02-09-2024,Tablet,Electronics,West,Kolkata,UPI,Shipped,6,2501,7,48,15006,1050.42,13907.58
+247,1068,Priya Malhotra,03-09-2024,Headphones,Electronics,West,Hyderabad,Credit Card,Cancelled,1,2228,29,96,2228,646.12,1485.88
+248,1097,Arjun Yadav,04-09-2024,Phone,Electronics,North,Hyderabad,Debit Card,Pending,4,2957,2,78,11828,236.56,11513.44
+249,1069,Aditya Reddy,05-09-2024,Laptop,Electronics,South,Delhi,Cash on Delivery,Delivered,1,2100,18,194,2100,378,1528
+250,1085,Arjun Joshi,06-09-2024,Mouse,Accessories,East,Mumbai,Cash on Delivery,Cancelled,6,2810,29,145,16860,4889.4,11825.6
+251,1010,Aditya Singh,07-09-2024,Mouse,Electronics,East,Delhi,Cash on Delivery,Shipped,4,1649,13,164,6596,857.48,5574.52
+252,1015,Rohan Malhotra,08-09-2024,Keyboard,Electronics,East,Chennai,Credit Card,Shipped,3,746,26,128,2238,581.88,1528.12
+253,1096,Divya Patel,09-09-2024,Monitor,Accessories,East,Bangalore,Credit Card,Shipped,3,1121,19,41,3363,638.97,2683.03
+254,1072,Rohan Reddy,10-09-2024,Headphones,Accessories,West,Mumbai,UPI,Delivered,9,780,16,87,7020,1123.2,5809.8
+255,1058,Kavya Reddy,11-09-2024,Laptop,Accessories,West,Delhi,Cash on Delivery,Pending,6,1572,24,88,9432,2263.68,7080.32
+256,1069,Manish Singh,12-09-2024,Mouse,Accessories,South,Kolkata,Credit Card,Delivered,9,2156,7,184,19404,1358.28,17861.72
+257,1079,Rohan Patel,13-09-2024,Monitor,Accessories,East,Mumbai,UPI,Cancelled,5,2203,23,68,11015,2533.45,8413.55
+258,1092,Divya Yadav,14-09-2024,Mouse,Accessories,East,Mumbai,Cash on Delivery,Shipped,2,2296,13,160,4592,596.96,3835.04
+259,1002,Sneha Reddy,15-09-2024,Laptop,Accessories,North,Delhi,Debit Card,Delivered,8,903,25,181,7224,1806,5237
+260,1019,Priya Malhotra,16-09-2024,Tablet,Electronics,West,Mumbai,UPI,Delivered,5,2508,5,128,12540,627,11785
+261,1058,Priya Nair,17-09-2024,Laptop,Electronics,East,Kolkata,Credit Card,Pending,2,2603,22,105,5206,1145.32,3955.68
+262,1035,Karan Sharma,18-09-2024,Keyboard,Accessories,South,Hyderabad,Credit Card,Pending,4,1825,21,72,7300,1533,5695
+263,1018,Rahul Iyer,19-09-2024,Laptop,Electronics,South,Mumbai,UPI,Shipped,9,837,15,142,7533,1129.95,6261.05
+264,1089,Aditya Yadav,20-09-2024,Laptop,Electronics,West,Hyderabad,UPI,Delivered,4,2990,24,106,11960,2870.4,8983.6
+265,1066,Meera Gupta,21-09-2024,Keyboard,Electronics,South,Kolkata,Credit Card,Delivered,4,1209,18,198,4836,870.48,3767.52
+266,1018,Suresh Iyer,22-09-2024,Headphones,Accessories,South,Delhi,Debit Card,Pending,2,840,13,150,1680,218.4,1311.6
+267,1019,Swati Reddy,23-09-2024,Laptop,Accessories,West,Bangalore,Cash on Delivery,Delivered,6,2859,18,61,17154,3087.72,14005.28
+268,1095,Priya Reddy,24-09-2024,Keyboard,Electronics,East,Mumbai,Debit Card,Delivered,2,2061,2,117,4122,82.44,3922.56
+269,1070,Rohan Malhotra,25-09-2024,Monitor,Accessories,East,Bangalore,UPI,Delivered,7,1405,9,179,9835,885.15,8770.85
+270,1051,Kavya Singh,26-09-2024,Tablet,Electronics,South,Kolkata,Debit Card,Pending,3,885,18,128,2655,477.9,2049.1
+271,1032,Aditya Yadav,27-09-2024,Tablet,Electronics,South,Mumbai,Credit Card,Shipped,3,2051,8,70,6153,492.24,5590.76
+272,1039,Rahul Sharma,28-09-2024,Laptop,Electronics,East,Hyderabad,UPI,Cancelled,5,387,27,104,1935,522.45,1308.55
+273,1038,Karan Reddy,29-09-2024,Headphones,Electronics,West,Chennai,Cash on Delivery,Shipped,3,1819,19,193,5457,1036.83,4227.17
+274,1081,Nikhil Iyer,30-09-2024,Headphones,Accessories,South,Bangalore,Credit Card,Cancelled,2,1887,12,146,3774,452.88,3175.12
+275,1000,Rohan Joshi,01-10-2024,Monitor,Accessories,North,Mumbai,Credit Card,Delivered,9,1184,6,40,10656,639.36,9976.64
+276,1010,Pooja Reddy,02-10-2024,Laptop,Accessories,West,Bangalore,Cash on Delivery,Shipped,2,747,13,63,1494,194.22,1236.78
+277,1091,Swati Singh,03-10-2024,Tablet,Electronics,South,Mumbai,Cash on Delivery,Cancelled,2,2972,8,158,5944,475.52,5310.48
+278,1056,Swati Iyer,04-10-2024,Headphones,Accessories,South,Delhi,Debit Card,Pending,8,1631,26,122,13048,3392.48,9533.52
+279,1088,Priya Malhotra,05-10-2024,Laptop,Electronics,North,Hyderabad,UPI,Pending,9,1075,27,87,9675,2612.25,6975.75
+280,1049,Pooja Singh,06-10-2024,Mouse,Accessories,North,Bangalore,Cash on Delivery,Shipped,7,817,22,148,5719,1258.18,4312.82
+281,1022,Priya Sharma,07-10-2024,Headphones,Electronics,East,Chennai,Cash on Delivery,Shipped,3,2661,24,111,7983,1915.92,5956.08
+282,1030,Karan Yadav,08-10-2024,Keyboard,Electronics,West,Chennai,UPI,Delivered,9,1565,27,43,14085,3802.95,10239.05
+283,1093,Neha Sharma,09-10-2024,Mouse,Electronics,West,Kolkata,Cash on Delivery,Shipped,3,1443,18,144,4329,779.22,3405.78
+284,1041,Swati Patel,10-10-2024,Headphones,Accessories,East,Mumbai,Cash on Delivery,Delivered,5,1102,14,160,5510,771.4,4578.6
+285,1098,Amit Iyer,11-10-2024,Tablet,Accessories,West,Bangalore,Debit Card,Delivered,9,362,19,130,3258,619.02,2508.98
+286,1006,Swati Malhotra,12-10-2024,Phone,Accessories,West,Kolkata,Credit Card,Pending,3,2174,13,117,6522,847.86,5557.14
+287,1015,Swati Iyer,13-10-2024,Mouse,Accessories,West,Bangalore,Credit Card,Pending,7,469,23,158,3283,755.09,2369.91
+288,1089,Divya Verma,14-10-2024,Monitor,Electronics,West,Mumbai,Credit Card,Cancelled,1,831,5,198,831,41.55,591.45
+289,1059,Vikram Patel,15-10-2024,Monitor,Accessories,West,Chennai,Credit Card,Pending,4,1105,20,36,4420,884,3500
+290,1001,Meera Malhotra,16-10-2024,Tablet,Accessories,North,Delhi,Cash on Delivery,Pending,4,2214,28,118,8856,2479.68,6258.32
+291,1000,Divya Malhotra,17-10-2024,Headphones,Electronics,West,Chennai,UPI,Shipped,7,1841,3,101,12887,386.61,12399.39
+292,1047,Rahul Nair,18-10-2024,Laptop,Electronics,North,Kolkata,UPI,Pending,8,404,7,123,3232,226.24,2882.76
+293,1011,Vikram Malhotra,19-10-2024,Headphones,Electronics,West,Hyderabad,Debit Card,Cancelled,1,781,16,171,781,124.96,485.04
+294,1068,Arjun Iyer,20-10-2024,Tablet,Accessories,East,Delhi,Debit Card,Shipped,5,1779,29,38,8895,2579.55,6277.45
+295,1036,Karan Malhotra,21-10-2024,Monitor,Electronics,South,Kolkata,Cash on Delivery,Cancelled,7,1040,8,184,7280,582.4,6513.6
+296,1031,Priya Joshi,22-10-2024,Headphones,Electronics,North,Mumbai,UPI,Pending,4,2036,0,104,8144,0,8040
+297,1008,Priya Yadav,23-10-2024,Monitor,Electronics,West,Delhi,UPI,Cancelled,4,1451,23,27,5804,1334.92,4442.08
+298,1098,Vikram Iyer,24-10-2024,Mouse,Accessories,East,Kolkata,Credit Card,Shipped,4,1919,19,47,7676,1458.44,6170.56
+299,1018,Pooja Patel,25-10-2024,Laptop,Electronics,South,Mumbai,Cash on Delivery,Delivered,6,1842,24,24,11052,2652.48,8375.52
+300,1047,Anjali Reddy,26-10-2024,Mouse,Accessories,North,Chennai,Cash on Delivery,Cancelled,7,2843,13,164,19901,2587.13,17149.87
+301,1079,Divya Yadav,27-10-2024,Monitor,Accessories,South,Hyderabad,Credit Card,Cancelled,2,2497,10,120,4994,499.4,4374.6
+302,1002,Rohan Kumar,28-10-2024,Monitor,Electronics,East,Mumbai,Cash on Delivery,Shipped,5,1074,20,183,5370,1074,4113
+303,1019,Amit Malhotra,29-10-2024,Phone,Electronics,North,Bangalore,Cash on Delivery,Shipped,4,1664,2,137,6656,133.12,6385.88
+304,1023,Suresh Nair,30-10-2024,Phone,Accessories,South,Mumbai,Debit Card,Cancelled,3,2443,8,166,7329,586.32,6576.68
+305,1053,Arjun Verma,31-10-2024,Mouse,Electronics,West,Mumbai,UPI,Pending,7,889,26,83,6223,1617.98,4522.02
+306,1032,Vikram Joshi,01-11-2024,Keyboard,Electronics,North,Hyderabad,Cash on Delivery,Cancelled,6,2210,13,110,13260,1723.8,11426.2
+307,1023,Kavya Iyer,02-11-2024,Mouse,Accessories,South,Bangalore,Debit Card,Shipped,7,2886,29,136,20202,5858.58,14207.42
+308,1074,Manish Singh,03-11-2024,Phone,Accessories,East,Kolkata,UPI,Delivered,5,1622,8,117,8110,648.8,7344.2
+309,1071,Kavya Joshi,04-11-2024,Monitor,Electronics,East,Kolkata,Credit Card,Delivered,6,2201,3,30,13206,396.18,12779.82
+310,1035,Swati Nair,05-11-2024,Tablet,Accessories,North,Mumbai,Debit Card,Pending,5,871,26,73,4355,1132.3,3149.7
+311,1037,Isha Gupta,06-11-2024,Mouse,Electronics,South,Bangalore,Debit Card,Cancelled,7,1371,3,192,9597,287.91,9117.09
+312,1083,Isha Reddy,07-11-2024,Monitor,Electronics,North,Bangalore,UPI,Delivered,2,1695,27,66,3390,915.3,2408.7
+313,1098,Suresh Kumar,08-11-2024,Tablet,Electronics,North,Hyderabad,Credit Card,Cancelled,5,1143,7,159,5715,400.05,5155.95
+314,1088,Aditya Reddy,09-11-2024,Tablet,Accessories,South,Chennai,Debit Card,Shipped,6,2446,1,168,14676,146.76,14361.24
+315,1098,Vikram Gupta,10-11-2024,Phone,Electronics,South,Kolkata,Cash on Delivery,Delivered,6,1649,8,158,9894,791.52,8944.48
+316,1024,Meera Verma,11-11-2024,Mouse,Electronics,West,Hyderabad,Cash on Delivery,Pending,5,2739,28,24,13695,3834.6,9836.4
+317,1092,Divya Joshi,12-11-2024,Headphones,Electronics,South,Delhi,Cash on Delivery,Shipped,7,1095,13,39,7665,996.45,6629.55
+318,1017,Vikram Reddy,13-11-2024,Laptop,Accessories,East,Kolkata,Credit Card,Pending,8,2389,21,188,19112,4013.52,14910.48
+319,1081,Kavya Singh,14-11-2024,Phone,Accessories,North,Hyderabad,Debit Card,Shipped,7,1536,8,65,10752,860.16,9826.84
+320,1065,Meera Singh,15-11-2024,Phone,Accessories,North,Kolkata,Cash on Delivery,Delivered,5,364,23,31,1820,418.6,1370.4
+321,1053,Manish Sharma,16-11-2024,Headphones,Accessories,East,Chennai,Credit Card,Pending,1,2561,22,89,2561,563.42,1908.58
+322,1034,Neha Joshi,17-11-2024,Laptop,Accessories,South,Delhi,Cash on Delivery,Pending,5,2268,15,36,11340,1701,9603
+323,1079,Neha Verma,18-11-2024,Monitor,Electronics,East,Chennai,UPI,Shipped,2,1305,28,134,2610,730.8,1745.2
+324,1060,Suresh Nair,19-11-2024,Keyboard,Accessories,East,Delhi,Debit Card,Pending,5,1953,29,166,9765,2831.85,6767.15
+325,1040,Priya Joshi,20-11-2024,Mouse,Accessories,West,Mumbai,Debit Card,Shipped,5,2552,16,173,12760,2041.6,10545.4
+326,1099,Priya Yadav,21-11-2024,Keyboard,Accessories,East,Hyderabad,Credit Card,Shipped,2,2138,15,67,4276,641.4,3567.6
+327,1032,Pooja Yadav,22-11-2024,Monitor,Electronics,North,Delhi,Credit Card,Shipped,5,570,29,127,2850,826.5,1896.5
+328,1067,Manish Patel,23-11-2024,Phone,Accessories,East,Chennai,Debit Card,Shipped,4,2080,11,71,8320,915.2,7333.8
+329,1032,Meera Patel,24-11-2024,Laptop,Accessories,North,Kolkata,Cash on Delivery,Delivered,1,1052,2,115,1052,21.04,915.96
+330,1013,Aditya Yadav,25-11-2024,Phone,Electronics,North,Delhi,Cash on Delivery,Shipped,3,583,10,89,1749,174.9,1485.1
+331,1020,Arjun Malhotra,26-11-2024,Tablet,Accessories,North,Hyderabad,UPI,Cancelled,1,2131,13,121,2131,277.03,1732.97
+332,1047,Isha Nair,27-11-2024,Phone,Electronics,South,Delhi,Cash on Delivery,Pending,5,2692,17,94,13460,2288.2,11077.8
+333,1019,Suresh Iyer,28-11-2024,Phone,Electronics,West,Bangalore,Credit Card,Cancelled,4,624,20,180,2496,499.2,1816.8
+334,1007,Suresh Iyer,29-11-2024,Monitor,Electronics,North,Kolkata,Credit Card,Delivered,7,2408,20,170,16856,3371.2,13314.8
+335,1006,Rohan Verma,30-11-2024,Monitor,Electronics,North,Hyderabad,Cash on Delivery,Cancelled,5,828,4,162,4140,165.6,3812.4
+336,1066,Rohan Nair,01-12-2024,Monitor,Electronics,South,Hyderabad,Credit Card,Pending,4,1094,15,174,4376,656.4,3545.6
+337,1016,Anjali Verma,02-12-2024,Keyboard,Accessories,North,Mumbai,Debit Card,Cancelled,2,2737,19,198,5474,1040.06,4235.94
+338,1032,Pooja Yadav,03-12-2024,Tablet,Electronics,East,Chennai,Debit Card,Delivered,4,2574,4,101,10296,411.84,9783.16
+339,1047,Vikram Nair,04-12-2024,Monitor,Electronics,East,Mumbai,Cash on Delivery,Shipped,2,797,2,111,1594,31.88,1451.12
+340,1075,Neha Gupta,05-12-2024,Laptop,Accessories,West,Hyderabad,Debit Card,Cancelled,8,2536,11,198,20288,2231.68,17858.32
+341,1058,Amit Verma,06-12-2024,Keyboard,Electronics,North,Kolkata,Debit Card,Delivered,3,792,0,194,2376,0,2182
+342,1085,Pooja Iyer,07-12-2024,Headphones,Accessories,South,Delhi,UPI,Delivered,9,1887,20,23,16983,3396.6,13563.4
+343,1021,Nikhil Gupta,08-12-2024,Laptop,Accessories,East,Delhi,UPI,Pending,4,772,28,154,3088,864.64,2069.36
+344,1029,Vikram Joshi,09-12-2024,Mouse,Accessories,South,Kolkata,Debit Card,Pending,6,2275,8,128,13650,1092,12430
+345,1037,Priya Verma,10-12-2024,Mouse,Electronics,South,Hyderabad,Cash on Delivery,Cancelled,5,2290,28,182,11450,3206,8062
+346,1050,Pooja Malhotra,11-12-2024,Laptop,Electronics,East,Delhi,UPI,Shipped,1,1904,8,67,1904,152.32,1684.68
+347,1053,Isha Yadav,12-12-2024,Monitor,Electronics,South,Delhi,Credit Card,Delivered,9,2670,3,92,24030,720.9,23217.1
+348,1007,Karan Kumar,13-12-2024,Headphones,Accessories,East,Delhi,Credit Card,Cancelled,1,376,2,91,376,7.52,277.48
+349,1026,Sneha Joshi,14-12-2024,Headphones,Electronics,South,Chennai,Credit Card,Delivered,8,728,16,135,5824,931.84,4757.16
+350,1026,Rohan Malhotra,15-12-2024,Keyboard,Electronics,East,Chennai,Cash on Delivery,Delivered,9,1833,1,192,16497,164.97,16140.03
+351,1097,Rohan Kumar,16-12-2024,Headphones,Electronics,North,Bangalore,Debit Card,Shipped,9,1165,23,100,10485,2411.55,7973.45
+352,1020,Divya Reddy,17-12-2024,Mouse,Accessories,West,Mumbai,Credit Card,Shipped,1,1717,0,100,1717,0,1617
+353,1029,Swati Sharma,18-12-2024,Tablet,Accessories,East,Kolkata,Cash on Delivery,Cancelled,2,397,7,132,794,55.58,606.42
+354,1096,Swati Singh,19-12-2024,Monitor,Electronics,East,Kolkata,UPI,Shipped,1,2857,12,115,2857,342.84,2399.16
+355,1027,Priya Yadav,20-12-2024,Headphones,Electronics,West,Kolkata,Debit Card,Shipped,2,1052,22,91,2104,462.88,1550.12
+356,1063,Divya Reddy,21-12-2024,Keyboard,Electronics,East,Bangalore,UPI,Cancelled,8,1737,14,166,13896,1945.44,11784.56
+357,1096,Karan Sharma,22-12-2024,Mouse,Electronics,East,Chennai,Cash on Delivery,Shipped,5,2269,7,82,11345,794.15,10468.85
+358,1068,Karan Reddy,23-12-2024,Tablet,Accessories,South,Hyderabad,Credit Card,Pending,7,1280,11,57,8960,985.6,7917.4
+359,1060,Kavya Iyer,24-12-2024,Phone,Accessories,West,Hyderabad,Credit Card,Delivered,2,297,21,86,594,124.74,383.26
+360,1047,Manish Patel,25-12-2024,Phone,Accessories,North,Bangalore,Cash on Delivery,Delivered,8,2103,11,88,16824,1850.64,14885.36
+361,1018,Kavya Verma,26-12-2024,Tablet,Accessories,East,Hyderabad,Credit Card,Delivered,6,634,13,32,3804,494.52,3277.48
+362,1003,Meera Gupta,27-12-2024,Mouse,Electronics,West,Kolkata,Debit Card,Delivered,8,836,14,194,6688,936.32,5557.68
+363,1034,Nikhil Joshi,28-12-2024,Keyboard,Electronics,South,Mumbai,Cash on Delivery,Cancelled,1,787,14,50,787,110.18,626.82
+364,1063,Isha Yadav,29-12-2024,Tablet,Electronics,North,Delhi,UPI,Delivered,1,543,8,133,543,43.44,366.56
+365,1048,Priya Gupta,30-12-2024,Monitor,Accessories,West,Chennai,Cash on Delivery,Delivered,7,1517,18,41,10619,1911.42,8666.58
+366,1016,Aditya Reddy,31-12-2024,Monitor,Electronics,North,Chennai,Debit Card,Delivered,8,2179,25,112,17432,4358,12962
+367,1043,Rohan Yadav,01-01-2025,Phone,Accessories,North,Bangalore,Debit Card,Delivered,3,770,19,190,2310,438.9,1681.1
+368,1091,Rahul Gupta,02-01-2025,Headphones,Accessories,North,Chennai,Cash on Delivery,Pending,5,810,28,86,4050,1134,2830
+369,1029,Swati Gupta,03-01-2025,Keyboard,Electronics,East,Kolkata,Cash on Delivery,Delivered,1,1927,21,73,1927,404.67,1449.33
+370,1092,Arjun Joshi,04-01-2025,Phone,Electronics,East,Hyderabad,Credit Card,Pending,7,2490,7,157,17430,1220.1,16052.9
+371,1045,Divya Gupta,05-01-2025,Headphones,Electronics,South,Kolkata,Debit Card,Cancelled,5,2054,20,61,10270,2054,8155
+372,1005,Isha Yadav,06-01-2025,Headphones,Accessories,South,Bangalore,Cash on Delivery,Shipped,8,2808,18,83,22464,4043.52,18337.48
+373,1098,Divya Reddy,07-01-2025,Monitor,Electronics,West,Kolkata,Cash on Delivery,Delivered,8,1159,5,145,9272,463.6,8663.4
+374,1036,Meera Reddy,08-01-2025,Mouse,Accessories,South,Hyderabad,Debit Card,Shipped,9,2279,19,40,20511,3897.09,16573.91
+375,1023,Priya Joshi,09-01-2025,Laptop,Electronics,North,Mumbai,Cash on Delivery,Shipped,7,2638,24,188,18466,4431.84,13846.16
+376,1092,Nikhil Kumar,10-01-2025,Mouse,Accessories,North,Bangalore,Credit Card,Cancelled,1,2524,28,171,2524,706.72,1646.28
+377,1045,Nikhil Iyer,11-01-2025,Laptop,Accessories,East,Mumbai,Debit Card,Shipped,3,731,18,54,2193,394.74,1744.26
+378,1052,Amit Gupta,12-01-2025,Tablet,Electronics,North,Delhi,Credit Card,Pending,8,1377,3,49,11016,330.48,10636.52
+379,1094,Manish Singh,13-01-2025,Monitor,Accessories,West,Mumbai,Credit Card,Shipped,3,2630,22,76,7890,1735.8,6078.2
+380,1098,Meera Sharma,14-01-2025,Headphones,Accessories,North,Delhi,Credit Card,Shipped,8,1291,6,66,10328,619.68,9642.32
