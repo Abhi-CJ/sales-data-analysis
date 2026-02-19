@@ -1,6 +1,6 @@
 
 
-# 📊 Sales & Profit Data Analysis Project
+#  Sales & Profit Data Analysis Project
 
 ## Project Overview
 
