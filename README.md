@@ -2,7 +2,7 @@
 
 # 📊 Sales & Profit Data Analysis Project
 
-## 🔹 Project Overview
+## Project Overview
 
 This project analyzes retail sales data to identify revenue trends, profit patterns, customer purchasing behavior, order frequency, and seasonality.
 
@@ -10,7 +10,7 @@ The analysis focuses on high-performing regions, cities, and identifying product
 
 ---
 
-## 🔹 Dataset Description
+## Dataset Description
 
 The dataset contains the following transactional retail data:
 
@@ -26,7 +26,7 @@ The dataset contains the following transactional retail data:
 
 ---
 
-## 🔹 Tools & Technologies
+## Tools & Technologies
 
 * **Python**
 * **NumPy** — Numerical computation
@@ -35,7 +35,7 @@ The dataset contains the following transactional retail data:
 
 ---
 
-## 🔹 Data Cleaning Steps
+## Data Cleaning Steps
 
 1. Converted **Order_Date** to datetime format
 
@@ -56,7 +56,7 @@ The dataset contains the following transactional retail data:
 
 ---
 
-## 🔹 Exploratory Data Analysis
+## Exploratory Data Analysis
 
 * Monthly revenue and profit trend analysis
 * Category-wise revenue and profitability contribution
@@ -70,7 +70,7 @@ The dataset contains the following transactional retail data:
 
 ---
 
-## 🔹 Key Business Insights
+## Key Business Insights
 
 * Identification of revenue-driving categories with lower profit margins
 * Detection of discount levels contributing to loss-making orders
@@ -79,7 +79,7 @@ The dataset contains the following transactional retail data:
 
 ---
 
-## 🔹 Visualizations
+## Visualizations
 
 The project includes multiple visualizations such as:
 
@@ -92,7 +92,7 @@ The project includes multiple visualizations such as:
 
 ---
 
-## 🔹 Conclusion
+## Conclusion
 
 This analysis highlights important business drivers affecting revenue and profitability, including discount strategy, regional performance, and product demand behavior.
 
