@@ -11,16 +11,25 @@ columns_list = df.columns
 null_values = df.isnull().sum()
 duplicate_values = df.duplicated().sum()
 
+print('Data Overview')
+print(f'\n Rows and Columns\n{rows} rows and  {columns} columns')
+print(f'\nColumn Names\n{columns_list}')
+print(f'\nTotal null values in dataset\n{null_values.sum()}')
+print(f'\nTotal Duplicate Values in dataset\n{duplicate_values}')
+
+
 # Date Features
 df['Order_Date'] = pd.to_datetime(df['Order_Date'], dayfirst=True)
 df['Month'] = df['Order_Date'].dt.month_name()
 df['Year'] = df['Order_Date'].dt.year
 df['Month_num'] = df['Order_Date'].dt.month
-
+month_names = df['Month'].unique()
 
 total_years = df['Year'].unique()   # 2024 and 2025 (onty 14 data)
 
-# ===================== Sold Products  =====================
+
+
+# ===================== Remove cancelled orders   =====================
 
 
 sold_products = df[df['Order_Status'] != 'Cancelled']
@@ -31,42 +40,61 @@ mask = ~(
     ((sold_products['Order_Status'] == 'Pending') | (sold_products['Order_Status'] == 'Shipped'))
 )
 
+
+# ===================== Sold Products  =====================
+
 sold_products = sold_products[mask]
 
+remove_orders = len(df) - len(sold_products)
 
-
+print(f'\nTotal orders\n{len(df)}' )
+print(f'\nSold Products\n{len(sold_products)}')
+print(f'\nRemoved Products\n{remove_orders}')
 
 
 # ===================== OVerall Sales and profit =====================
 
-overall_sales = sold_products['Total_Sales'].sum()
+revenue = sold_products['Total_Sales'].sum()
 overall_profit = sold_products['Profit'].sum()
-overall_profit_margin = overall_profit/overall_sales if overall_sales > 0 else 0
+overall_profit_margin = overall_profit/revenue if revenue > 0 else 0
 print(len(sold_products[sold_products['Year'] == 2025]  ))
 
-#Over Sales and Profit Visualize 
-plt.scatter(sold_products['Total_Sales'], sold_products['Profit'], alpha=0.6)
+# #Overall Sales and Profit Visualize 
+# plt.scatter(sold_products['Total_Sales'], sold_products['Profit'], alpha=0.6)
 
-plt.xlabel('Sales')
-plt.ylabel('Profit')
-plt.title('Sales vs Profit Relationship')
+# plt.xlabel('Sales')
+# plt.ylabel('Profit')
+# plt.title('Sales vs Profit Relationship')
 
-plt.axhline(0, linestyle='--')
-plt.show()
+# plt.axhline(0, linestyle='--')
+# plt.show()
 
 
 
 
 # ===================== Sales Performance Of Year 2024 =====================
-# Sales in 2024 
-total_sales = sold_products[sold_products['Year'] == 2024].groupby('Year')['Total_Sales'].sum()
-total_profit = sold_products[sold_products['Year'] == 2024].groupby('Year')['Profit'].sum()
+
+sales_profit_2024 = sold_products[sold_products['Year'] == 2024]
+
+plt.scatter(sales_profit_2024['Total_Sales'], sales_profit_2024['Profit'], alpha = 0.6)
+
+plt.xlabel('Sales')
+plt.ylabel('Profit')
+plt.title('Sales Performance in year 2024')
+
+
+
+plt.axhline(0, linestyle = '--')
+plt.show()
+
+
+
 
 
 
 
 # ===================== Monthly SALES PERFORMANCE =====================
-# ===================== Remove cancelled orders   =====================
+
 
 
 
@@ -163,11 +191,13 @@ loss_making_products_by_category = (sold_products[sold_products['Profit'] < 0].g
 # ===================== REGIONAL ANALYSIS =====================
 
 
-
 regional_revenue = sold_products.groupby('Region')['Total_Sales'].sum()
-regional_revenue_ratio = regional_revenue/overall_sales
 
+
+regional_revenue_ratio = regional_revenue/revenue
 regional_profit = sold_products.groupby('Region')['Profit'].sum()
+
+
 regional_profit_ratio = regional_profit /overall_profit
 average_revenue_by_region = sold_products.groupby('Region')['Total_Sales'].mean()
 
@@ -176,22 +206,23 @@ profit_margin_by_category = profit_by_category / revenue_by_category.replace(0,1
 profit_margin_by_region = regional_profit / regional_revenue.replace(0,1)
 
 
-# Regional revenue
+#Regional  Revenue vs Profit Visualization
 
-plt.bar(regional_revenue.index, regional_revenue.values, color = colors[2:6])
-plt.xlabel('Regions', fontsize = 15)
-plt.ylabel('Revenue', fontsize = 15)
-plt.title('Regional sales', fontsize = 17)
+width = 0.30
+regions = regional_revenue.index
+x = np.arange(len(regions))
+
+plt.bar(x - width / 2, regional_revenue.values, color = 'orange', label = 'Sales')
+plt.bar(x + width/ 2, regional_profit.values, color = 'purple', label = 'Profit')
+
+
+plt.xlabel("Region", fontsize = 15)
+plt.ylabel("Amount", fontsize = 15)
+plt.title("Regional Revenue vs Profit", fontsize = 17)
+plt.legend()
+plt.xticks(x, regions)
 plt.show()
 
-
-#Regional Profit
-
-plt.bar(regional_profit.index, regional_profit.values, color = colors[4:8])
-plt.xlabel('Regions', fontsize = 15)
-plt.ylabel('Profit', fontsize = 15)
-plt.title('Regional Profit', fontsize = 17)
-plt.show()
 
 
 
@@ -223,10 +254,9 @@ for idx in region_analysis.index:
     
     # Highlight high sales but low profit
     if idx in high_sales_low_profit.index:
-        plt.scatter(sales, profit)
+        plt.scatter(sales, profit, color='red', alpha=0.7)
     else:
-        plt.scatter(sales, profit)
-    
+        plt.scatter(sales, profit, color='gray', alpha=0.4)
     # Label as Region-Product
     label = f"{idx[0]}-{idx[1]}"
     plt.text(sales, profit, label, fontsize=8)
@@ -297,8 +327,6 @@ cancellation_by_region_order_status = (
       / df.groupby(['Region','Payment_Mode'])['Order_ID'].nunique()
 )
 
-# order_region_payment_corr = df[['Region', 'Payment_Mode', 'Order_Status']].corr()
-
 
 
 
@@ -316,17 +344,28 @@ customer_segmentation = (
 )
 
 average_order_value = sold_products.groupby('Customer_ID')['Total_Sales'].mean()
-order_frequency = df.groupby('Customer_ID')['Order_Date'].nunique()
+order_frequency = df.groupby('Customer_ID')['Order_ID'].nunique()
 
 regular_customers = order_frequency[order_frequency>1]
 one_time_customers = order_frequency[order_frequency==1]
 
+#Top 5 customers by sales and profit earned
+
 top_5_customers = (
-    sold_products.groupby(['Customer_ID','Product'])
+    sold_products.groupby('Customer_ID')
       .agg({'Total_Sales':'sum', 'Profit':'sum'})
       .sort_values('Profit',ascending=False)
       .head(5)
 )
+
+# Top 5 customer by product quantity purcahse
+
+top_5_customers_by_quantity = sold_products.groupby('Customer_ID')['Quantity'].sum().sort_values(ascending = False).head(5) 
+
+print(top_5_customers)
+print()
+print()
+print(top_5_customers_by_quantity)
 
 customer_avg_sales_profit = sold_products.groupby('Customer_ID').agg({'Total_Sales':'mean','Profit':'mean'})
 customer_avg_sales_profit_corr = customer_avg_sales_profit.corr()
@@ -339,15 +378,29 @@ customer_avg_sales_profit_corr = customer_avg_sales_profit.corr()
 
 
 # ===================== PRODUCT ANALYSIS =====================
-product_demand_profit = sold_products.groupby('Product').agg({'Quantity':'sum','Profit':'sum'})
+product_demand = sold_products.groupby('Product').agg({'Quantity':'sum','Total_Sales': 'sum','Profit':'sum'})
 monthly_product_demand_profit = sold_products.groupby(['Product','Month']).agg({'Quantity':'sum','Total_Sales':'sum','Profit':'sum'})
 loss_making_products = sold_products[sold_products['Profit']<0].groupby('Product').agg({'Quantity':'sum','Total_Sales':'sum','Profit':'sum'})
 
 price_shipping_discount_sales_profit_corr = df[['Price','Shipping_Cost','Discount (%)','Total_Sales','Profit']].corr()
 
+#Top 3 selling products by thei sales and profit earned on these products
+
+top_3_products_by_sales =  product_demand['Total_Sales'].sort_values(ascending = False).head(3)
+print(top_3_products_by_sales)
 
 
+# Top 3 selling products by their quantity
 
+top_3_products = product_demand['Quantity'].sort_values(ascending = False).head(3)
+
+
+plt.bar(top_3_products.index, top_3_products.values, color = colors[5: 8])
+plt.xticks(rotation=25)
+plt.title("Top 3 Products by Demand")
+plt.show()
+
+print(top_3_products)
 
 
 
