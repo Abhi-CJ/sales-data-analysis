@@ -297,14 +297,14 @@ product_order_status_ratio = product_order_status/total_quantity
 print(product_order_status_ratio)
 
 
+#Product Distribution by Order Status
 
 plt.figure(figsize = (10,8))
-product_order_status.plot(kind = 'bar', color = ['red','green', 'yellow','pink'])
 
-plt.ylabel('Product Count', fontsize = 17)
-plt.title('Order Status Of Products', fontsize = 17)
+plt.pie(product_order_status, labels = product_order_status_ratio.index, autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'])
+
+plt.title('Product Distribution by Orders Status', fontsize = 17)
 plt.show()
-
 
 
 
