@@ -1,128 +1,168 @@
-# Sales & Profit Data Analysis Project
+# 📊 Sales & Profitability Data Analysis Project
 
-##  Project Overview
+## 🚀 Project Overview
 
-This project performs an end-to-end exploratory data analysis on retail transactional data to uncover **revenue trends, profitability drivers, customer behavior, regional performance, and discount impact**.
+This project performs an **end-to-end exploratory and business-focused analysis** on retail transactional data to uncover **revenue trends, profitability drivers, customer behavior, regional performance, and discount impact**.
 
-The objective is to move beyond basic aggregation and identify **actionable business insights**, including:
+Unlike basic aggregation projects, this analysis applies **real business logic filtering** to evaluate only *realized sales*, enabling more accurate profitability insights.
+
+The project identifies:
 
 * High-revenue but low-profit products
 * Discount-driven losses
-* Customer purchasing patterns
-* Regional and seasonal performance differences
+* Customer purchase behavior and retention patterns
+* Regional performance gaps
+* Operational risks such as cancellations and payment-related issues
 
 ---
 
-## Dataset Description
+## 📁 Dataset Description
 
-The dataset consists of **380 retail transactions** with operational, financial, and customer-level information.
+The dataset contains **380 retail transactions** with operational, financial, geographic, and customer-level attributes.
 
-Key features include:
+### Key Features
 
 * **Order_ID** — Unique order identifier
 * **Customer_ID & Customer_Name** — Customer tracking
-* **Region & City** — Geographic performance analysis
+* **Region & City** — Geographic segmentation
 * **Category & Product** — Product hierarchy
-* **Quantity & Price** — Purchase details
-* **Discount (%), Discount_Amount & Shipping_Cost** — Profitability factors
-* **Order_Status & Payment_Mode** — Order lifecycle information
-* **Total_Sales & Profit** — Core business metrics
+* **Quantity, Price & Shipping_Cost** — Transaction-level metrics
+* **Discount (%) & Discount_Amount** — Pricing strategy indicators
+* **Order_Status & Payment_Mode** — Order lifecycle and behavior
+* **Total_Sales & Profit** — Core business performance metrics
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 * **Python**
 * **Pandas** — Data cleaning, feature engineering, aggregation
-* **NumPy** — Numerical operations
-* **Matplotlib** — Visualization and trend analysis
+* **NumPy** — Numerical computations
+* **Matplotlib** — Visualization and business trend analysis
 
 ---
 
-## Data Cleaning & Feature Engineering
+## 🧹 Data Cleaning & Business Filtering
 
-The following preprocessing steps were applied:
+To ensure accurate business insights, the following preprocessing steps were applied:
 
 * Converted **Order_Date** to datetime format
 * Extracted **Year, Month Name, and Month Number** features
-* Removed **Cancelled orders** to avoid revenue distortion
-* Filtered dataset (`sold_products`) to include only realized sales:
+* Removed **Cancelled orders** to prevent revenue distortion
+* Created a **`sold_products` dataset** containing only fulfilled transactions
+* Excluded **Cash-on-Delivery orders that were Pending or Shipped**, ensuring analysis reflects realized revenue
 
-  * Excluded COD orders that were still **Pending or Shipped**
-* Created derived metrics:
+### 📌 Derived Business Metrics
 
-  * **Profit Margin**
-  * **Profit Per Unit**
-  * **Regional Revenue Contribution**
+* Profit Margin (%)
+* Profit Per Unit
+* Regional Revenue Contribution
+* Category Profitability
 
 ---
 
-## Exploratory Analysis Performed
+## 🔍 Exploratory Analysis Performed
 
-### Sales & Profit Trends
+### 📈 Sales & Profit Trends
 
-* Monthly revenue vs profit comparison
-* Year-specific performance analysis (2024 vs 2025)
+* Overall sales vs profit relationship
+* Year-specific performance comparison (2024 vs 2025)
+* Monthly sales and profit divergence analysis
+* January YoY comparison across years
 
-### Category & Product Analysis
+---
 
-* Category-wise revenue and profit contribution
-* Loss-making products detection
-* Product demand vs profitability evaluation
+### 🛍 Category & Product Analysis
 
-### Regional Performance
+* Category-wise revenue, discount, and profit evaluation
+* Detection of **loss-making products**
+* Separation of **top-demand vs top-revenue products**
+* Profit-per-unit analysis to identify inefficient products
+
+---
+
+### 🌍 Regional Performance
 
 * Region-wise revenue and profit comparison
 * Identification of **high-sales but low-profit region–product combinations**
-* Top-performing cities by revenue
+* Top-performing cities within each region
+* Regional contribution to overall revenue and profitability
 
-### Customer Behavior
+---
+
+### 👥 Customer Behavior Analysis
 
 * Customer segmentation (one-time vs repeat buyers)
 * Average order value analysis
-* Top customers by revenue, profit, and purchase quantity
-
-### 💸 Discount Impact
-
-* Discount vs profit correlation
-* Identification of discount thresholds causing losses
+* Top customers by revenue, profit, and quantity purchased
+* Customer-level profitability correlation
 
 ---
 
-## Key Business Insights
+### 📦 Order Health & Operations
 
-* Certain products generate strong revenue but weak profitability due to high discounts and shipping costs
-* Repeat customers contribute disproportionately to profit stability
-* Specific region–product combinations show **profit leakage despite high demand**
-* Aggressive discounting directly correlates with loss-making transactions
+* Product distribution across order statuses
+* Cancellation rate analysis
+* Cancellation patterns by payment mode and region
 
 ---
 
-## Visualizations Included
+### 💸 Discount & Pricing Impact
+
+* Discount vs profit relationship analysis
+* Identification of discount levels causing negative profitability
+* Evaluation of discount contribution to total sold quantity
+
+---
+
+### 🔗 Correlation Analysis
+
+A **Matplotlib-based correlation heatmap** was created to evaluate relationships between:
+
+* Price
+* Discount
+* Quantity
+* Profit
+
+This helps understand pricing strategy effects on profitability.
+
+---
+
+## 📊 Visualizations Included
 
 * Sales vs Profit scatter analysis
 * Monthly Sales & Profit comparison charts
 * Category Revenue vs Profit bar charts
 * Regional Sales vs Profit distribution
-* Discount vs Profit scatter analysis
+* Discount vs Profit scatter with color mapping
 * Region–Product performance scatter plot
+* Correlation heatmap (Price, Discount, Quantity, Profit)
 
 ---
 
-## Conclusion
+## 💡 Key Business Insights
 
-This project demonstrates how structured data analysis can uncover **hidden profitability risks, customer value patterns, and regional growth opportunities**.
+* Certain products generate strong revenue but weak profitability due to high discounting and shipping costs
+* Repeat customers contribute significantly to revenue stability and profit consistency
+* Multiple region–product combinations show **profit leakage despite strong demand**
+* Aggressive discounting demonstrates a measurable negative impact on profitability
+* Demand-heavy products are not always the most profitable, indicating pricing optimization opportunities
 
-The insights can support:
+---
 
-* Discount optimization
-* Product pricing decisions
-* Regional marketing strategy
+## 🎯 Business Value
+
+This analysis supports strategic decision-making in:
+
+* Discount optimization and pricing strategy
+* Product portfolio refinement
+* Regional marketing investment
 * Customer retention planning
+* Operational risk reduction
 
 ---
 
-## How to Run
+## ▶️ How to Run
 
 ```bash
 git clone https://github.com/Abhi-CJ/sales-data-analysis.git
@@ -132,7 +172,6 @@ python analysis.py
 
 ---
 
-## Author
+## 👨‍💻 Author
 
 **Abhishek Jain**
-
