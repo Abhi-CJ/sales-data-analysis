@@ -60,29 +60,27 @@ overall_profit_margin = overall_profit/revenue if revenue > 0 else 0
 print(len(sold_products[sold_products['Year'] == 2025]  ))
 
 # #Overall Sales and Profit Visualize 
-# plt.scatter(sold_products['Total_Sales'], sold_products['Profit'], alpha=0.6)
+plt.scatter(sold_products['Total_Sales'], sold_products['Profit'], alpha=0.6)
 
-# plt.xlabel('Sales')
-# plt.ylabel('Profit')
-# plt.title('Sales vs Profit Relationship')
+plt.xlabel('Sales')
+plt.ylabel('Profit')
+plt.title('Sales vs Profit Relationship')
 
-# plt.axhline(0, linestyle='--')
-# plt.show()
+plt.axhline(0, linestyle='--')
+plt.show()
 
 
 
 
 # ===================== Sales Performance Of Year 2024 =====================
 
-sales_profit_2024 = sold_products[sold_products['Year'] == 2024]
+sold_products_2024 = sold_products[sold_products['Year'] == 2024]
 
-plt.scatter(sales_profit_2024['Total_Sales'], sales_profit_2024['Profit'], alpha = 0.6)
+plt.scatter(sold_products_2024['Total_Sales'], sold_products_2024['Profit'], alpha = 0.6)
 
 plt.xlabel('Sales')
 plt.ylabel('Profit')
 plt.title('Sales Performance in year 2024')
-
-
 
 plt.axhline(0, linestyle = '--')
 plt.show()
@@ -93,20 +91,18 @@ plt.show()
 
 
 
-# ===================== Monthly SALES PERFORMANCE =====================
+# =================== Monthly SALES PERFORMANCE OF YEAR 2024 ==================
 
 
-
-
-
-monthly_sales = sold_products.groupby('Month_num')['Total_Sales'].sum()
+monthly_sales = sold_products_2024.groupby('Month_num')['Total_Sales'].sum()
 
 monthly_sales_trend = monthly_sales.sort_index()
 monthly_sales_ranking = monthly_sales.sort_values(ascending = False)
 
-monthly_profit = sold_products.groupby('Month_num')['Profit'].sum()
+monthly_profit = sold_products_2024.groupby('Month_num')['Profit'].sum()
 monthly_profit_trend = monthly_profit.sort_index()
 monthly_profit_ranking = monthly_profit.sort_values(ascending = False)
+
 
 
 
@@ -139,6 +135,16 @@ plt.show()
 
 
 
+#=============== January monht sales performance in 2024 vs 2025===============
+
+jan_sales_summary = sold_products[sold_products['Month_num'] == 1].groupby('Year').agg( {"Quantity":'sum','Total_Sales':'sum', 'Profit': 'sum'})
+
+print(f'\nJanuary Month Sales in Year 2024 vs 2025\n{jan_sales_summary}')
+
+
+
+
+
 
 
 
@@ -152,8 +158,6 @@ average_revenue_by_category = sold_products.groupby('Category')['Total_Sales'].m
 
 
 # Revenue and profit by category
-
-
 
 categories = revenue_by_category.index
 x = np.arange(len(categories))
@@ -174,17 +178,8 @@ plt.show()
 
 
 
-
-
 # Loss-making products by category
 loss_making_products_by_category = (sold_products[sold_products['Profit'] < 0].groupby('Category').agg({'Quantity':'sum','Total_Sales':'sum','Profit':'sum'})).sort_values('Profit')
-
-
-
-
-
-
-
 
 
 
@@ -300,7 +295,6 @@ print(product_order_status_ratio)
 #Product Distribution by Order Status
 
 plt.figure(figsize = (10,8))
-
 plt.pie(product_order_status, labels = product_order_status_ratio.index, autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'])
 
 plt.title('Product Distribution by Orders Status', fontsize = 17)
@@ -335,7 +329,7 @@ cancellation_by_region_order_status = (
 
 
 # ===================== CUSTOMER ANALYSIS =====================
-unique_customers = df['Customer_ID'].nunique()
+unique_customers = df['Customer_ID'].unique()
 
 customer_segmentation = (
     df.groupby(['Customer_ID','Product'])
@@ -344,7 +338,7 @@ customer_segmentation = (
 )
 
 average_order_value = sold_products.groupby('Customer_ID')['Total_Sales'].mean()
-order_frequency = df.groupby('Customer_ID')['Order_ID'].nunique()
+order_frequency = df.groupby('Customer_ID')['Order_ID'].value_counts()
 
 regular_customers = order_frequency[order_frequency>1]
 one_time_customers = order_frequency[order_frequency==1]
@@ -371,6 +365,15 @@ customer_avg_sales_profit = sold_products.groupby('Customer_ID').agg({'Total_Sal
 customer_avg_sales_profit_corr = customer_avg_sales_profit.corr()
 
 
+# payment mode Preference
+
+payment_mode_distribution = df['Payment_Mode'].value_counts()
+
+plt.figure(figsize = (7,4))
+plt.pie(payment_mode_distribution.values, labels =payment_mode_distribution.index,autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'], radius = 1.0 )  
+plt.title('Payment mode Prefrence', fontsize = 17)
+
+plt.show()
 
 
 
@@ -428,8 +431,8 @@ plt.legend()
 plt.show()
 
 # ===================== PRICE & PROFIT RELATION =====================
-shipping_price_profit_corr = df[['Shipping_Cost','Price','Profit']].corr()
-price_discount_profit_corr = df[['Price','Discount (%)','Profit']].corr()
+shipping_price_profit_corr = sold_products[['Shipping_Cost','Price','Profit']].corr()
+price_discount_profit_corr = sold_products[['Price','Discount (%)','Profit']].corr()
 
 
 
