@@ -16,7 +16,7 @@ The workflow mimics how real companies evaluate sales performance after removing
 
 ---
 
-## 🗂 Dataset Description
+## Dataset Description
 
 The dataset contains **380 retail transactions** with financial, operational, geographic, and customer attributes.
 
