@@ -29,7 +29,70 @@ total_years = df['Year'].unique()   # 2024 and 2025 (onty 14 data)
 
 
 
-# ===================== Remove cancelled orders   =====================
+# ===================== ORDER HEALTH =====================
+
+order_status = df.groupby('Order_Status')['Quantity'].sum()
+total_orders = order_status.sum()
+product_order_status_ratio = order_status/total_orders
+print(product_order_status_ratio)
+
+
+#Product Distribution by Order Status
+
+plt.figure(figsize = (10,8))
+plt.pie(order_status, labels = product_order_status_ratio.index, autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'], radius = 1.0)
+
+plt.title('Product Distribution by Orders Status', fontsize = 17)
+plt.show()
+
+
+
+
+cancellation_rate = df[df['Order_Status']=='Cancelled']['Quantity'].sum() / total_orders
+delivered_rate = df[df['Order_Status']=='Delivered']['Quantity'].sum() / total_orders
+pending_rate = df[df['Order_Status']=='Pending']['Quantity'].sum() / total_orders
+
+cancellation_by_payment = (
+    df[df['Order_Status']=='Cancelled'].groupby('Payment_Mode')['Order_ID'].nunique()
+    / df.groupby('Payment_Mode')['Order_ID'].nunique()
+)
+
+
+cancellation_by_region_order_status = (
+    df[df['Order_Status'] == 'Cancelled']
+      .groupby(['Region','Payment_Mode'])['Order_ID'].nunique()
+      / df.groupby(['Region','Payment_Mode'])['Order_ID'].nunique()
+)
+
+
+
+# payment mode Preference
+
+payment_mode_distribution = df['Payment_Mode'].value_counts()
+
+plt.figure(figsize = (7,4))
+plt.pie(payment_mode_distribution.values, labels =payment_mode_distribution.index,autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'], radius = 1.0 )  
+plt.title('Payment mode Preference ', fontsize = 17)
+
+plt.show()
+
+
+#=============== January month sales performance in 2024 vs 2025===============
+
+jan_sales_summary = df[df['Month'] == 'January'].groupby('Year').agg( {"Quantity":'sum','Total_Sales':'sum', 'Profit': 'sum'})
+
+print(f'\nJanuary Month Sales in Year 2024 vs 2025\n{jan_sales_summary}')
+
+
+
+
+
+# ===================== Remove biased data(year 2025)   =====================
+
+df = df[df['Year'] != 2025] #Excluding year 2025 data because its very less only 14 data out of 234 
+
+
+# ===================== Remove cancelled orders from total orders of year  2024  =====================
 
 
 sold_products = df[df['Order_Status'] != 'Cancelled']
@@ -43,8 +106,9 @@ mask = ~(
 
 # ===================== Sold Products  =====================
 
-sold_products = sold_products[mask]
+sold_products = sold_products[mask].copy()
 
+unique_customers = sold_products['Customer_ID'].nunique()
 remove_orders = len(df) - len(sold_products)
 
 print(f'\nTotal orders\n{len(df)}' )
@@ -52,40 +116,21 @@ print(f'\nSold Products\n{len(sold_products)}')
 print(f'\nRemoved Products\n{remove_orders}')
 
 
-# ===================== OVerall Sales and profit =====================
-
-revenue = sold_products['Total_Sales'].sum()
-overall_profit = sold_products['Profit'].sum()
-overall_profit_margin = overall_profit/revenue if revenue > 0 else 0
-
-
-
-
-# #Overall Sales and Profit Visualize 
-plt.scatter(sold_products['Total_Sales'], sold_products['Profit'], alpha=0.6)
-
-plt.xlabel('Sales')
-plt.ylabel('Profit')
-plt.title('Sales vs Profit Relationship')
-
-plt.axhline(0, linestyle='--')
-plt.show()
 
 
 
 
 # ===================== Sales Performance Of Year 2024 =====================
 
-sold_products_2024 = sold_products[sold_products['Year'] == 2024]
 
 # Calculate revenue, profit, and profit margin
-revenue_2024 = sold_products_2024['Total_Sales'].sum()
-profit_2024 = sold_products_2024['Profit'].sum()
+revenue_2024 = sold_products['Total_Sales'].sum()
+profit_2024 = sold_products['Profit'].sum()
 profit_margin_2024 = profit_2024 / revenue_2024 if revenue_2024 > 0 else 0
 
 
 # Visualization of sales performance in year 2024 
-plt.scatter(sold_products_2024['Total_Sales'], sold_products_2024['Profit'], alpha = 0.6)
+plt.scatter(sold_products['Total_Sales'], sold_products['Profit'], alpha = 0.6)
 
 plt.xlabel('Sales')
 plt.ylabel('Profit')
@@ -103,16 +148,16 @@ plt.show()
 # =================== Monthly SALES PERFORMANCE OF YEAR 2024 ==================
 
 
-monthly_sales = sold_products_2024.groupby('Month_num')['Total_Sales'].sum()
+monthly_sales = sold_products.groupby('Month_num')['Total_Sales'].sum()
 
 monthly_sales_trend = monthly_sales.sort_index()
 monthly_sales_ranking = monthly_sales.sort_values(ascending = False)
 
-monthly_profit = sold_products_2024.groupby('Month_num')['Profit'].sum()
+monthly_profit = sold_products.groupby('Month_num')['Profit'].sum()
 monthly_profit_trend = monthly_profit.sort_index()
 monthly_profit_ranking = monthly_profit.sort_values(ascending = False)
 
-monthly_product_sold = sold_products_2024.groupby('Month_num')['Quantity'].sum()
+monthly_product_sold = sold_products.groupby('Month_num')['Quantity'].sum()
 
 
 
@@ -137,19 +182,11 @@ plt.ylabel('Profit', fontsize = 15)
 plt.title('Sales Trend Vs Profit', fontsize = 18)
 
 plt.legend()
-month_labels = sold_products_2024.groupby('Month_num')['Month'].first().sort_index()
+month_labels = sold_products.groupby('Month_num')['Month'].first().sort_index()
 plt.xticks(x, month_labels.values)
 
 plt.show()
 
-
-
-
-#=============== January month sales performance in 2024 vs 2025===============
-
-jan_sales_summary = sold_products[sold_products['Month'] == 'January'].groupby('Year').agg( {"Quantity":'sum','Total_Sales':'sum', 'Profit': 'sum'})
-
-print(f'\nJanuary Month Sales in Year 2024 vs 2025\n{jan_sales_summary}')
 
 
 
@@ -207,14 +244,14 @@ region_analysis = sold_products.groupby(['Region','Product']).agg({
     
 })
 
-regional_profit_margin = region_analysis['Profit'].values / region_analysis['Total_Sales'].values
+regional_profit_margin = region_analysis['Profit'] / region_analysis['Total_Sales']
 
 average_revenue_by_region = sold_products.groupby('Region')['Total_Sales'].mean()
 
 #Regional revenue and profit contribution in total revenue and profit
 
-regional_revenue_ratio = region_analysis['Total_Sales']/revenue *100
-regional_profit_ratio = region_analysis['Profit']/overall_profit * 100
+regional_revenue_ratio = region_analysis['Total_Sales']/revenue_2024    *100
+regional_profit_ratio = region_analysis['Profit']/profit_2024 * 100
 
 
 
@@ -240,12 +277,12 @@ plt.show()
 
 
 
-#Regions with  sales higher than average  sales  but lower profit than average profit 
+#Regions with  sales higher than average  sales  but lower profit 
 
 
 high_sales_low_profit = region_analysis[
     (region_analysis['Total_Sales'] > region_analysis['Total_Sales'].mean()) &
-    (region_analysis['Profit'] < region_analysis['Profit'].mean())
+    (region_analysis['Profit'] < region_analysis['Profit'].median())
 ]
 
 
@@ -300,96 +337,45 @@ top_3_cities_by_sales = (
 
 
 
-# ===================== ORDER HEALTH =====================
-total_orders = df['Order_ID'].nunique()
-product_order_status = df.groupby('Order_Status')['Quantity'].sum()
-total_quantity = product_order_status.sum()
-product_order_status_ratio = product_order_status/total_quantity
-print(product_order_status_ratio)
-
-
-#Product Distribution by Order Status
-
-plt.figure(figsize = (10,8))
-plt.pie(product_order_status, labels = product_order_status_ratio.index, autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'])
-
-plt.title('Product Distribution by Orders Status', fontsize = 17)
-plt.show()
-
-
-
-
-cancellation_rate = df[df['Order_Status']=='Cancelled']['Order_ID'].nunique() / total_orders
-delivered_rate = df[df['Order_Status']=='Delivered']['Order_ID'].nunique() / total_orders
-pending_rate = df[df['Order_Status']=='Pending']['Order_ID'].nunique() / total_orders
-
-cancellation_by_payment = (
-    df[df['Order_Status']=='Cancelled'].groupby('Payment_Mode')['Order_ID'].nunique()
-    / df.groupby('Payment_Mode')['Order_ID'].nunique()
-)
-
-
-
-
-cancellation_by_region_order_status = (
-    df[df['Order_Status'] == 'Cancelled']
-      .groupby(['Region','Payment_Mode'])['Order_ID'].nunique()
-      / df.groupby(['Region','Payment_Mode'])['Order_ID'].nunique()
-)
-
-
-
-
-
-
-
 
 # ===================== CUSTOMER ANALYSIS =====================
-unique_customers = df['Customer_ID'].unique()
+customer_count = sold_products['Customer_ID'].nunique()
+customer_order_count = sold_products.groupby('Customer_ID')['Order_ID'].count()
 
-customer_segmentation = (
-    df.groupby(['Customer_ID','Product'])
-      .agg({'Total_Sales':'sum','Profit':'sum'})
-      .sort_values('Total_Sales',ascending=False)
-)
-
+order_frequency = df.groupby('Customer_ID')['Order_ID'].nunique()
 average_order_value = sold_products.groupby('Customer_ID')['Total_Sales'].mean()
-order_frequency = df.groupby('Customer_ID')['Order_ID'].value_counts()
 
 regular_customers = order_frequency[order_frequency>1]
 one_time_customers = order_frequency[order_frequency==1]
 
-#Top 5 customers by sales and profit earned
 
-top_5_customers = (
+
+
+
+#Sales Permormance metrics by each customer
+
+Sales_by_each_customer = (
     sold_products.groupby('Customer_ID')
-      .agg({'Total_Sales':'sum', 'Profit':'sum'})
-      .sort_values('Profit',ascending=False)
-      .head(5)
+      .agg({'Total_Sales':'sum','Profit':'sum',})
+      .sort_values('Total_Sales',ascending=False)
 )
+#Top 5 customers 
+top_5_customers = Sales_by_each_customer.sort_values('Total_Sales',ascending=False).head(5)
 
-# Top 5 customer by product quantity purcahse
+print("\nTop 5 Customers:\n ",top_5_customers)
 
-top_5_customers_by_quantity = sold_products.groupby('Customer_ID')['Quantity'].sum().sort_values(ascending = False).head(5) 
 
-print(top_5_customers)
-print()
-print()
-print(top_5_customers_by_quantity)
+
+
+
+
+
+
+
+
 
 customer_avg_sales_profit = sold_products.groupby('Customer_ID').agg({'Total_Sales':'mean','Profit':'mean'})
 customer_avg_sales_profit_corr = customer_avg_sales_profit.corr()
-
-
-# payment mode Preference
-
-payment_mode_distribution = df['Payment_Mode'].value_counts()
-
-plt.figure(figsize = (7,4))
-plt.pie(payment_mode_distribution.values, labels =payment_mode_distribution.index,autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'], radius = 1.0 )  
-plt.title('Payment mode Preference ', fontsize = 17)
-
-plt.show()
 
 
 
@@ -400,6 +386,7 @@ plt.show()
 product_demand = sold_products.groupby('Product').agg({'Quantity':'sum','Total_Sales': 'sum','Profit':'sum'})
 monthly_product_demand_profit = sold_products.groupby(['Product','Month']).agg({'Quantity':'sum','Total_Sales':'sum','Profit':'sum'})
 loss_making_products = sold_products[sold_products['Profit']<0].groupby('Product').agg({'Quantity':'sum','Total_Sales':'sum','Profit':'sum'})
+
 corr_matrix = sold_products[['Price','Discount (%)','Quantity','Profit']].corr()
 
 
@@ -450,20 +437,23 @@ plt.show()
 
 
 # ===================== DISCOUNT ANALYSIS =====================
+
+
 total_sold_products = sold_products['Quantity'].sum()
 discounted_products_count = sold_products[sold_products['Discount (%)']>0]['Quantity'].sum()
 products_without_discount = total_sold_products - discounted_products_count
 
-print('Total Products:', total_sold_products)
+print('Total Sold Products:', total_sold_products)
 print('discounted_products_count',discounted_products_count)
 print('Without Discount Products Total: ', products_without_discount)
 
 #Discount and Profit Relation
-discount_profit_corr = df[['Discount (%)','Profit']].corr()
+
+discount_profit_corr = sold_products[['Discount (%)','Profit']].corr()
 
 
 plt.figure(figsize = (8,5))
-plt.scatter(df['Discount (%)'], df['Profit'], c = [i for i in (df['Profit'])] , cmap = 'coolwarm', label = 'Profit')
+plt.scatter(sold_products['Discount (%)'], sold_products['Profit'], c = [i for i in (sold_products['Profit'])] , cmap = 'coolwarm', label = 'Profit')
 
 plt.xlabel('Percentage Discount', fontsize = 15)
 plt.ylabel('Profit', fontsize = 15)
