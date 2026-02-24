@@ -1,4 +1,4 @@
-# 📊 Sales & Profitability Data Analysis Project
+# Sales & Profitability Data Analysis Project
 
 ## Project Overview
 
