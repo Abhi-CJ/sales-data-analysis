@@ -28,29 +28,32 @@ month_names = df['Month'].unique()
 total_years = df['Year'].unique()   # 2024 and 2025 (onty 14 data)
 
 
-
 # ===================== ORDER HEALTH =====================
 
-order_status = df.groupby('Order_Status')['Quantity'].sum()
-total_orders = order_status.sum()
-product_order_status_ratio = order_status/total_orders
-print(product_order_status_ratio)
+# Orders Count and  Rate
+orders_by_order_status = df.groupby('Order_Status')['Order_ID'].nunique()
+print(orders_by_order_status)
 
+#Total Orders 
+total_orders = orders_by_order_status.sum()
+print(total_orders)
 
-#Product Distribution by Order Status
+#Order Distribution By Order Status
 
-plt.figure(figsize = (10,8))
-plt.pie(order_status, labels = product_order_status_ratio.index, autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'], radius = 1.0)
-
-plt.title('Product Distribution by Orders Status', fontsize = 17)
+plt.figure(figsize = (7,4))
+plt.pie(orders_by_order_status,
+        labels = orders_by_order_status.index,
+        autopct = '%0.2f%%',
+        radius = 1.0,
+        colors = ['red','green','orange','blue'],
+        textprops = {'fontsize': 13},
+        wedgeprops = {'edgecolor': 'white'},
+        startangle = 90
+        )
+plt.title("Orders Distribution By Order Status", fontsize = 15)
 plt.show()
 
 
-
-
-cancellation_rate = df[df['Order_Status']=='Cancelled']['Quantity'].sum() / total_orders
-delivered_rate = df[df['Order_Status']=='Delivered']['Quantity'].sum() / total_orders
-pending_rate = df[df['Order_Status']=='Pending']['Quantity'].sum() / total_orders
 
 cancellation_by_payment = (
     df[df['Order_Status']=='Cancelled'].groupby('Payment_Mode')['Order_ID'].nunique()
@@ -65,14 +68,20 @@ cancellation_by_region_order_status = (
 )
 
 
-
 # payment mode Preference
 
 payment_mode_distribution = df['Payment_Mode'].value_counts()
+print(payment_mode_distribution)
 
 plt.figure(figsize = (7,4))
-plt.pie(payment_mode_distribution.values, labels =payment_mode_distribution.index,autopct = '%0.2f%%', colors = ['red','green', 'yellow','pink'], radius = 1.0 )  
-plt.title('Payment mode Preference ', fontsize = 17)
+plt.pie(payment_mode_distribution.values,
+        labels =payment_mode_distribution.index,
+        autopct = '%0.2f%%',
+        colors = ['blue','#FFC107','green','purple'],
+        radius = 1.0, startangle = 90,textprops = {'fontsize': 12},
+        wedgeprops = {'edgecolor': 'white'} )
+  
+plt.title('Payment Mode Preference ', fontsize = 17)
 
 plt.show()
 
@@ -84,12 +93,9 @@ jan_sales_summary = df[df['Month'] == 'January'].groupby('Year').agg( {"Quantity
 print(f'\nJanuary Month Sales in Year 2024 vs 2025\n{jan_sales_summary}')
 
 
-
-
-
 # ===================== Remove biased data(year 2025)   =====================
 
-df = df[df['Year'] != 2025] #Excluding year 2025 data because its very less only 14 data out of 234 
+df = df[df['Year'] != 2025] #Excluding year 2025 data because its very less only 14 data out of 380 
 
 
 # ===================== Remove cancelled orders from total orders of year  2024  =====================
@@ -107,17 +113,17 @@ mask = ~(
 # ===================== Sold Products  =====================
 
 sold_products = sold_products[mask].copy()
+high_discount_loss = sold_products[
+    (sold_products['Discount (%)'] > sold_products['Discount (%)'].mean()) &
+    (sold_products['Profit'] < 0)
+]
 
 unique_customers = sold_products['Customer_ID'].nunique()
-remove_orders = len(df) - len(sold_products)
+removed_orders = len(df) - len(sold_products)
 
 print(f'\nTotal orders\n{len(df)}' )
 print(f'\nSold Products\n{len(sold_products)}')
-print(f'\nRemoved Products\n{remove_orders}')
-
-
-
-
+print(f'\nRemoved Products\n{removed_orders}')
 
 
 # ===================== Sales Performance Of Year 2024 =====================
@@ -130,23 +136,17 @@ profit_margin_2024 = profit_2024 / revenue_2024 if revenue_2024 > 0 else 0
 
 
 # Visualization of sales performance in year 2024 
-plt.scatter(sold_products['Total_Sales'], sold_products['Profit'], alpha = 0.6)
+plt.scatter(sold_products['Total_Sales'], sold_products['Profit'],c = sold_products['Profit'], cmap = 'magma', edgecolors = 'white', alpha = 0.6)
 
-plt.xlabel('Sales')
-plt.ylabel('Profit')
-plt.title('Sales Performance in year 2024')
+plt.xlabel('Sales', fontsize = 15)
+plt.ylabel('Profit', fontsize = 15)
+plt.title('Sales Performance Of Year 2024',fontsize = 17)
+colorbar = plt.colorbar()
+colorbar.set_label('Profit Level', fontsize = 15)
 
-plt.axhline(0, linestyle = '--')
 plt.show()
 
-
-
-
-
-
-
 # =================== Monthly SALES PERFORMANCE OF YEAR 2024 ==================
-
 
 monthly_sales = sold_products.groupby('Month_num')['Total_Sales'].sum()
 
@@ -161,6 +161,8 @@ monthly_product_sold = sold_products.groupby('Month_num')['Quantity'].sum()
 
 
 
+print("Best revenue month:", monthly_sales_trend.idxmax())
+print("Worst profit month:", monthly_profit_trend.idxmin())
 #Monthly sales trend vs profit trend
 
 
@@ -169,13 +171,13 @@ colors = [
     'pink','gray','olive','cyan','gold','teal'
 ]
 
-plt.figure(figsize = (7,3))
+plt.figure(figsize = (13,5))
 width = 0.40
 months = monthly_sales_trend.index
 x = np.arange(len(months))
 
-plt.bar(x - width /2, monthly_sales_trend.values, color = 'skyblue', label = 'Sales')
-plt.bar(x + width /2, monthly_profit_trend.values, color = 'gray', label = 'Profit')
+plt.bar(x - width /2, monthly_sales_trend.values, color = 'orange', label = 'Sales')
+plt.bar(x + width /2, monthly_profit_trend.values, color = 'blue', label = 'Profit')
 
 plt.xlabel("Monthly Sales", fontsize = 15)
 plt.ylabel('Profit', fontsize = 15)
@@ -186,15 +188,6 @@ month_labels = sold_products.groupby('Month_num')['Month'].first().sort_index()
 plt.xticks(x, month_labels.values)
 
 plt.show()
-
-
-
-
-
-
-
-
-
 
 
 # ===================== CATEGORY ANALYSIS =====================
@@ -208,33 +201,27 @@ category_summary = sold_products.groupby('Category').agg({
         }) 
 
 
-
-
+print("Most profitable category:", category_summary['Profit'].idxmax())
 category_summary['Profit_Margin (%)'] = category_summary['Profit'] / category_summary['Total_Sales'] * 100
 print(f'\nCategory Wise Sales Performance\n{category_summary}')
 
 
 #Visualization of revenue and profit contribution of each category
-
 categories = category_summary.index
 x = np.arange(len(categories))
+
 width = 0.40
 
-plt.figure(figsize = (10,6))
+plt.figure(figsize = (8,5))
+plt.bar(x - width /2, category_summary['Total_Sales'].values, width, color = '#007BFF',label = 'Revenue' )
+plt.bar(x + width /2, category_summary['Profit'].values, width, color = '#FF7F0E',label = 'Profit' )
 
-plt.bar(x - width/ 2, category_summary['Total_Sales'].values, width, label ='Revenue', color = colors[10])
-plt.bar(x + width/2 , category_summary['Profit'].values, width, label = 'Profit',color = colors[5])
+plt.xlabel('Categories', fontsize = 15)
+plt.ylabel('Amount', fontsize = 15)
+plt.title("Category Wise Revenue and Profit", fontsize = 17)
+plt.xticks(x, categories, rotation = 45)
 
-plt.xlabel('Category', fontsize = 18)
-plt.ylabel('Amount', fontsize = 18)
-plt.title('Revenue and Profit by Category', fontsize = 20)
-
-plt.xticks(x, categories, rotation = 20,fontsize = 13)
-plt.legend()
 plt.show()
-
-
-
 
 
 # ===================== REGIONAL ANALYSIS =====================
@@ -254,14 +241,11 @@ regional_revenue_ratio = region_analysis['Total_Sales']/revenue_2024    *100
 regional_profit_ratio = region_analysis['Profit']/profit_2024 * 100
 
 
-
-
-
 #Regional  Revenue vs Profit Visualization
 
 width = 0.30
-regions = region_analysis.index
-x = np.arange(len(regions))
+labels = [f'{r }-{p}' for r,p in region_analysis.index]
+x = np.arange(len(labels))
 
 plt.bar(x - width / 2, region_analysis['Total_Sales'].values, color = 'orange', label = 'Sales')
 plt.bar(x + width/ 2, region_analysis['Profit'].values, color = 'purple', label = 'Profit')
@@ -271,11 +255,8 @@ plt.xlabel("Region", fontsize = 15)
 plt.ylabel("Amount", fontsize = 15)
 plt.title("Regional Revenue vs Profit", fontsize = 17)
 plt.legend()
-plt.xticks(x, regions)
+plt.xticks(x, labels, rotation = 80)
 plt.show()
-
-
-
 
 #Regions with  sales higher than average  sales  but lower profit 
 
@@ -284,10 +265,6 @@ high_sales_low_profit = region_analysis[
     (region_analysis['Total_Sales'] > region_analysis['Total_Sales'].mean()) &
     (region_analysis['Profit'] < region_analysis['Profit'].median())
 ]
-
-
-
-
 
 
 plt.figure(figsize=(12,7))
@@ -321,7 +298,6 @@ plt.tight_layout()
 plt.show()
 
 
-
 # Top cities
 top_3_cities_by_sales = (
     sold_products.groupby(['Region','City']).agg({'Total_Sales': 'sum', 'Discount (%)': 'mean','Profit': 'sum'})
@@ -330,54 +306,34 @@ top_3_cities_by_sales = (
 )
 
 
-
-
-
-
-
-
-
-
 # ===================== CUSTOMER ANALYSIS =====================
 customer_count = sold_products['Customer_ID'].nunique()
-customer_order_count = sold_products.groupby('Customer_ID')['Order_ID'].count()
 
-order_frequency = df.groupby('Customer_ID')['Order_ID'].nunique()
+order_frequency = sold_products.groupby('Customer_ID')['Order_ID'].nunique()
 average_order_value = sold_products.groupby('Customer_ID')['Total_Sales'].mean()
 
 regular_customers = order_frequency[order_frequency>1]
 one_time_customers = order_frequency[order_frequency==1]
 
 
+monthly_customer_frequency =sold_products.groupby('Month')['Customer_ID'].value_counts().sort_values(ascending=False).head(5)
+print(monthly_customer_frequency )
+monthly_customer_orders = sold_products.groupby(['Month','Customer_ID'])['Order_ID'].count()
 
-
-
-#Sales Permormance metrics by each customer
+#Sales Permormance metrics for each customer
 
 Sales_by_each_customer = (
     sold_products.groupby('Customer_ID')
       .agg({'Total_Sales':'sum','Profit':'sum',})
       .sort_values('Total_Sales',ascending=False)
 )
+print('Sales From Each Customer\n',Sales_by_each_customer)
 #Top 5 customers 
 top_5_customers = Sales_by_each_customer.sort_values('Total_Sales',ascending=False).head(5)
 
 print("\nTop 5 Customers:\n ",top_5_customers)
 
-
-
-
-
-
-
-
-
-
-
-customer_avg_sales_profit = sold_products.groupby('Customer_ID').agg({'Total_Sales':'mean','Profit':'mean'})
-customer_avg_sales_profit_corr = customer_avg_sales_profit.corr()
-
-
+customer_revenue_contribution = Sales_by_each_customer['Total_Sales']/revenue_2024
 
 
 
@@ -385,7 +341,7 @@ customer_avg_sales_profit_corr = customer_avg_sales_profit.corr()
 # ===================== PRODUCT ANALYSIS =====================
 product_demand = sold_products.groupby('Product').agg({'Quantity':'sum','Total_Sales': 'sum','Profit':'sum'})
 monthly_product_demand_profit = sold_products.groupby(['Product','Month']).agg({'Quantity':'sum','Total_Sales':'sum','Profit':'sum'})
-loss_making_products = sold_products[sold_products['Profit']<0].groupby('Product').agg({'Quantity':'sum','Total_Sales':'sum','Profit':'sum'})
+
 
 corr_matrix = sold_products[['Price','Discount (%)','Quantity','Profit']].corr()
 
@@ -396,7 +352,7 @@ plt.figure(figsize=(8,6))
 # Display the correlation matrix as a heatmap
 plt.imshow(corr_matrix, cmap='coolwarm', interpolation='nearest')
 
-# Add colorbar
+
 plt.colorbar(label='Correlation Coefficient')
 
 # Set ticks and labels
@@ -404,7 +360,7 @@ columns = ['Price','Discount (%)','Quantity','Profit']
 plt.xticks(range(len(columns)), columns, rotation=45, ha='right')
 plt.yticks(range(len(columns)), columns)
 
-# Add correlation values inside each cell
+# Adding correlation values inside each cell
 for i in range(len(columns)):
     for j in range(len(columns)):
         plt.text(j, i, f"{corr_matrix.iloc[i, j]:.2f}", ha='center', va='center', color='black')
@@ -412,8 +368,6 @@ for i in range(len(columns)):
 plt.title('Correlation Heatmap (Price, Discount, Quantity, Profit)')
 plt.tight_layout()
 plt.show()
-
-
 
 
 #Top 3 selling products 
@@ -425,15 +379,15 @@ print(top_3_selling_products)
 # Top 3 demanding products
 
 top_3_demanding_products = product_demand['Quantity'].sort_values(ascending = False).head(3)
-print(top_3_demanding_products)
 
-plt.bar(top_3_demanding_products.index, top_3_demanding_products.values, color = colors[5: 8])
-plt.xticks(rotation=25)
+plt.bar(top_3_demanding_products.index, top_3_demanding_products.values, color = ['cyan', 'gold', 'blue'])
+
+plt.xlabel('Products', fontsize = 15)
+plt.ylabel('Demand', fontsize = 15)
 plt.title("Top 3 Products by Demand")
+
+plt.xticks(rotation=25)
 plt.show()
-
-
-
 
 
 # ===================== DISCOUNT ANALYSIS =====================
@@ -443,9 +397,14 @@ total_sold_products = sold_products['Quantity'].sum()
 discounted_products_count = sold_products[sold_products['Discount (%)']>0]['Quantity'].sum()
 products_without_discount = total_sold_products - discounted_products_count
 
+#High Discount but weak products
+
+weak_margin_products = sold_products[(sold_products['Discount (%)']>sold_products['Discount (%)'].mean()) & (sold_products['Profit'] < sold_products['Profit'].median())]
+print('Weak Margin Products count\n',len(weak_margin_products))
+
 print('Total Sold Products:', total_sold_products)
 print('discounted_products_count',discounted_products_count)
-print('Without Discount Products Total: ', products_without_discount)
+print('Non Discounted Products Count: ', products_without_discount)
 
 #Discount and Profit Relation
 
@@ -453,7 +412,12 @@ discount_profit_corr = sold_products[['Discount (%)','Profit']].corr()
 
 
 plt.figure(figsize = (8,5))
-plt.scatter(sold_products['Discount (%)'], sold_products['Profit'], c = [i for i in (sold_products['Profit'])] , cmap = 'coolwarm', label = 'Profit')
+plt.scatter(sold_products['Discount (%)'],
+            sold_products['Profit'],
+            c = sold_products['Profit'],
+            cmap = 'coolwarm',
+            label = 'Profit',
+            edgecolors = 'white')
 
 plt.xlabel('Percentage Discount', fontsize = 15)
 plt.ylabel('Profit', fontsize = 15)
@@ -464,12 +428,6 @@ color_bar.set_label('Profit Level', fontsize = 15)
 plt.legend()
 
 plt.show()
-
-
-
-
-
-
 
 # ===================== FINAL PRODUCT PERFORMANCE =====================
 sold_products['Profit_Per_Unit'] = sold_products['Profit'] / sold_products['Quantity'].replace(0,1)
